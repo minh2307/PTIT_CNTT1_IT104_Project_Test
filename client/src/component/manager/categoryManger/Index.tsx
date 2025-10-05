@@ -2,6 +2,7 @@ import { FooterTest } from "../Footer.manager";
 import { Nav } from "../Nav.manager";
 import { CategoryTable } from "./Table.categoryManager";
 import { CategoryTooldbar } from "./Tooldbar.categoryManager";
+import { CategoryModal } from "./Modal.categoryManager";
 
 const Index = () => {
   return (
@@ -11,6 +12,7 @@ const Index = () => {
         <h1 className="font-Roboto text-2xl py-3">Quản lý danh mục</h1>
         <CategoryTooldbar></CategoryTooldbar>
         <CategoryTable></CategoryTable>
+        <CategoryModal />
       </div>
       <FooterTest></FooterTest>
     </div>

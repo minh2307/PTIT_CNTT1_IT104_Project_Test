@@ -9,7 +9,7 @@ const CategoryManager = lazy(
   () => import("../component/manager/categoryManger/Index")
 );
 
-const Test = lazy(() => import("../App"));
+const Test = lazy(() => import("../component/manager/TestManager/Index"));
 
 export const router = createBrowserRouter([
   {
@@ -31,10 +31,11 @@ export const router = createBrowserRouter([
         path: "category",
         element: <LazyLoader element={CategoryManager} />,
       },
+      {
+        path: "test",
+        element: <LazyLoader element={Test} />,
+      },
     ],
   },
-  {
-    path: "/test",
-    element: <LazyLoader element={Test} />,
-  },
+  {},
 ]);
