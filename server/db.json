@@ -1,0 +1,166 @@
+{
+  "tests": [
+    {
+      "id": 1,
+      "testName": "Thách thức sự hiểu biết của bạn",
+      "categoryId": 1,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711184/history_pupic4.png",
+      "playTime": 15,
+      "playAmount": 5,
+      "questions": [
+        {
+          "content": "Which is the part of the computer system that one can physically touch?",
+          "answers": [
+            { "answer": "Data" },
+            { "answer": "Operating systems" },
+            { "answer": "Hardware", "isCorrected": true },
+            { "answer": "Software" }
+          ]
+        },
+        {
+          "content": "Which device is used to input text into a computer?",
+          "answers": [
+            { "answer": "Monitor" },
+            { "answer": "Printer" },
+            { "answer": "Keyboard", "isCorrected": true },
+            { "answer": "Speaker" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "testName": "Science Challenge",
+      "categoryId": 2,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711199/science_dlkedc.png",
+      "playTime": 10,
+      "playAmount": 12,
+      "questions": [
+        {
+          "content": "What planet is known as the Red Planet?",
+          "answers": [
+            { "answer": "Earth" },
+            { "answer": "Mars", "isCorrected": true },
+            { "answer": "Jupiter" },
+            { "answer": "Venus" }
+          ]
+        },
+        {
+          "content": "What gas do plants absorb from the atmosphere?",
+          "answers": [
+            { "answer": "Oxygen" },
+            { "answer": "Nitrogen" },
+            { "answer": "Carbon dioxide", "isCorrected": true },
+            { "answer": "Hydrogen" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "testName": "Entertainment Trivia",
+      "categoryId": 3,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711111/entertainment_pzrota.png",
+      "playTime": 5,
+      "playAmount": 7,
+      "questions": [
+        {
+          "content": "Who directed the movie 'Inception'?",
+          "answers": [
+            { "answer": "Christopher Nolan", "isCorrected": true },
+            { "answer": "James Cameron" },
+            { "answer": "Steven Spielberg" },
+            { "answer": "Quentin Tarantino" }
+          ]
+        },
+        {
+          "content": "Which company owns the 'Marvel Studios' brand?",
+          "answers": [
+            { "answer": "Sony Pictures" },
+            { "answer": "Netflix" },
+            { "answer": "Disney", "isCorrected": true },
+            { "answer": "Warner Bros" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "testName": "History Quiz",
+      "categoryId": 4,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711191/life_mfrvlx.png",
+      "playTime": 10,
+      "playAmount": 9,
+      "questions": [
+        {
+          "content": "Who was the first President of the United States?",
+          "answers": [
+            { "answer": "George Washington", "isCorrected": true },
+            { "answer": "Abraham Lincoln" },
+            { "answer": "John Adams" },
+            { "answer": "Thomas Jefferson" }
+          ]
+        },
+        {
+          "content": "In which year did World War II end?",
+          "answers": [
+            { "answer": "1945", "isCorrected": true },
+            { "answer": "1940" },
+            { "answer": "1939" },
+            { "answer": "1950" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "testName": "Geography Challenge",
+      "categoryId": 5,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711191/life_mfrvlx.png",
+      "playTime": 8,
+      "playAmount": 6,
+      "questions": [
+        {
+          "content": "What is the capital city of Japan?",
+          "answers": [
+            { "answer": "Beijing" },
+            { "answer": "Tokyo", "isCorrected": true },
+            { "answer": "Seoul" },
+            { "answer": "Bangkok" }
+          ]
+        },
+        {
+          "content": "Which continent is the Sahara Desert located in?",
+          "answers": [
+            { "answer": "Asia" },
+            { "answer": "Africa", "isCorrected": true },
+            { "answer": "Australia" },
+            { "answer": "South America" }
+          ]
+        }
+      ]
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "categoryName": "Lịch sử",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711184/history_pupic4.png"
+    },
+    {
+      "id": 2,
+      "categoryName": "Khoa học",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711199/science_dlkedc.png"
+    },
+    {
+      "id": 3,
+      "categoryName": "Giải trí",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711111/entertainment_pzrota.png"
+    },
+    {
+      "id": 4,
+      "categoryName": "Đời sống",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711191/life_mfrvlx.png"
+    }
+  ]
+}

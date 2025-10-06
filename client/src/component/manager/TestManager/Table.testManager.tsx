@@ -1,36 +1,60 @@
 import { Button, Space, Table, type TableProps } from "antd";
 
-import history from "../../../assets/history.png";
-import science from "../../../assets/science.png";
-import entertainment from "../../../assets/entertainment.png";
-import life from "../../../assets/life.png";
 import CategoryPagination from "../categoryManger/Pagination.categoryManager";
+import type { TestType } from "../../../interface/test.interface";
 
-export const TableTest = () => {
-  interface DataType {
-    id: number;
-    name: string;
-    category: string;
-    question: number;
-    time: number;
-    img?: string;
-  }
+import {
+  openDelete,
+  openEdit,
+} from "../../../redux/manager/modal/testModal.redux";
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hook";
+import { useEffect, useMemo } from "react";
+import { getAllCategorys } from "../../../apis/category.api";
 
-  const columns: TableProps<DataType>["columns"] = [
+type Props = {
+  data: TestType[] | undefined;
+};
+
+export const TableTest = ({ data }: Props) => {
+  const dispatch = useAppDispatch();
+  type Cat = {
+    id?: number | string;
+    categoryName?: string;
+    categoryImg?: string;
+  };
+
+  const { categorys: categories } = useAppSelector(
+    (state) => state.categoryModal
+  );
+
+  useEffect(() => {
+    dispatch(getAllCategorys());
+  }, [dispatch]);
+
+  const categoryMap = useMemo(() => {
+    const obj: Record<string | number, string> = {};
+    (categories || []).forEach((c: Cat) => {
+      obj[c.id || ""] = c.categoryName || c.categoryImg || "";
+    });
+
+    return obj;
+  }, [categories]);
+
+  const columns: TableProps<TestType>["columns"] = [
     {
       title: "Id",
       dataIndex: "id",
       key: "id",
       onHeaderCell: () => ({
-        style: { backgroundColor: "#1f2937", color: "#fff" },
+        style: { backgroundColor: "#1f2937", color: "#fff", width: "5%" },
       }),
     },
     {
       title: "Tên bài test",
-      dataIndex: "name",
-      key: "name",
+      dataIndex: "testName",
+      key: "testName",
       onHeaderCell: () => ({
-        style: { backgroundColor: "#1f2937", color: "#fff" },
+        style: { backgroundColor: "#1f2937", color: "#fff", width: "25%" },
       }),
     },
     {
@@ -38,12 +62,12 @@ export const TableTest = () => {
       dataIndex: "category",
       key: "category",
       onHeaderCell: () => ({
-        style: { backgroundColor: "#1f2937", color: "#fff" },
+        style: { backgroundColor: "#1f2937", color: "#fff", width: "20%" },
       }),
       render: (_, record) => (
-        <div>
-          <img src={record.img} alt="" />
-          <p>{record.category}</p>
+        <div className="flex items-center gap-2">
+          <img src={record.image} alt={String(record.testName || "image")} />
+          <p>{categoryMap[record.categoryId || ""] ?? record.categoryId}</p>
         </div>
       ),
     },
@@ -52,17 +76,20 @@ export const TableTest = () => {
       dataIndex: "question",
       key: "question",
       onHeaderCell: () => ({
-        style: { backgroundColor: "#1f2937", color: "#fff" },
+        style: { backgroundColor: "#1f2937", color: "#fff", width: "10%" },
       }),
+      render: (_, record) => (
+        <p>{record.questions?.length ?? record.question ?? 0}</p>
+      ),
     },
     {
       title: "Thời gian",
       dataIndex: "time",
       key: "time",
       onHeaderCell: () => ({
-        style: { backgroundColor: "#1f2937", color: "#fff" },
+        style: { backgroundColor: "#1f2937", color: "#fff", width: "10%" },
       }),
-      render: (_, record) => <p>{record.time} min</p>,
+      render: (_, record) => <p>{record.playTime} min</p>,
     },
     {
       title: "Hành động",
@@ -70,86 +97,29 @@ export const TableTest = () => {
       width: "100px",
       render: (_, record) => (
         <Space size="middle">
-          <Button className="!bg-[#FFC107]">Sửa</Button>
-          <Button className="!bg-[#DC3545] !text-white ">Xoá</Button>
+          <Button
+            className="!bg-[#FFC107]"
+            onClick={() => dispatch(openEdit(record))}
+          >
+            Sửa
+          </Button>
+          <Button
+            className="!bg-[#DC3545] !text-white "
+            onClick={() => dispatch(openDelete(record))}
+          >
+            Xoá
+          </Button>
         </Space>
       ),
       onHeaderCell: () => ({
-        style: { backgroundColor: "#1f2937", color: "#fff" },
+        style: { backgroundColor: "#1f2937", color: "#fff", width: "10%" },
       }),
-    },
-  ];
-
-  const data: DataType[] = [
-    {
-      id: 1,
-      name: "History Quiz",
-      category: "Lịch sử",
-      question: 15,
-      time: 10,
-      img: history,
-    },
-    {
-      id: 2,
-      name: "Science Challenge",
-      category: "Khoa học",
-      question: 20,
-      time: 15,
-      img: science,
-    },
-    {
-      id: 3,
-      name: "Entertainment Trivia",
-      category: "Giải trí",
-      question: 10,
-      time: 5,
-      img: entertainment,
-    },
-    {
-      id: 4,
-      name: "Entertainment Trivia",
-      category: "Đời sống",
-      question: 10,
-      time: 5,
-      img: life,
-    },
-    {
-      id: 5,
-      name: "Entertainment Trivia",
-      category: "Đời sống",
-      question: 10,
-      time: 5,
-      img: life,
-    },
-    {
-      id: 6,
-      name: "Entertainment Trivia",
-      category: "Đời sống",
-      question: 10,
-      time: 5,
-      img: life,
-    },
-    {
-      id: 7,
-      name: "Entertainment Trivia",
-      category: "Đời sống",
-      question: 10,
-      time: 5,
-      img: life,
-    },
-    {
-      id: 8,
-      name: "Entertainment Trivia",
-      category: "Đời sống",
-      question: 10,
-      time: 5,
-      img: life,
     },
   ];
 
   return (
     <div>
-      <Table<DataType>
+      <Table<TestType>
         columns={columns}
         dataSource={data}
         pagination={false}

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import type { CategoryType } from "../../../interface/category.interface";
 import type { RootState } from "../../../redux/store.redux";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hook";
-import { close } from "../../../redux/manager/categoryModal.redux";
+import { close } from "../../../redux/manager/modal/categoryModal.redux";
 
 export const CategoryModal = () => {
   const dispatch = useAppDispatch();
@@ -14,26 +14,22 @@ export const CategoryModal = () => {
   const [form] = Form.useForm<CategoryType>();
 
   useEffect(() => {
-    // If modal is opened in edit mode, populate the form.
     if (isOpen && mode === "edit" && editing) {
-      // Primary attempt
       form.setFieldsValue({
         categoryName: editing.categoryName,
         categoryImg: editing.categoryImg,
       });
 
-      // Fallback in case inputs haven't mounted yet
-      setTimeout(() => {
-        form.setFieldsValue({
-          categoryName: editing.categoryName,
-          categoryImg: editing.categoryImg,
-        });
-      }, 0);
+      // setTimeout(() => {
+      //   form.setFieldsValue({
+      //     categoryName: editing.categoryName,
+      //     categoryImg: editing.categoryImg,
+      //   });
+      // }, 0);
 
       console.log("editing (filled)", editing, { isOpen, mode });
     }
 
-    // If in add mode, or modal closed, reset fields
     if (!isOpen || mode === "add") {
       form.resetFields();
     }

@@ -1,6 +1,6 @@
 import { Button } from "antd";
 import { useAppDispatch } from "../../../hooks/redux.hook";
-import { openAdd } from "../../../redux/manager/categoryModal.redux";
+import { openAdd } from "../../../redux/manager/modal/categoryModal.redux";
 
 export const CategoryTooldbar = () => {
   const dispatch = useAppDispatch();

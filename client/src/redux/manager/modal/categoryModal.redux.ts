@@ -1,16 +1,17 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { CategoryType } from "../../interface/category.interface";
+import type {
+  CategoryType,
+  InitialStateType,
+} from "../../../interface/category.interface";
+import { getAllCategorys } from "../../../apis/category.api";
 
-type ModalState = {
-  isOpen: boolean;
-  mode: "add" | "edit" | "delete" | null;
-  editing: CategoryType | null;
-};
-
-const initialState: ModalState = {
+const initialState: InitialStateType = {
   isOpen: false,
   mode: null,
   editing: null,
+  categorys: [],
+  loading: false,
+  error: null,
 };
 
 const categoryModalSlice = createSlice({
@@ -37,6 +38,25 @@ const categoryModalSlice = createSlice({
       state.mode = null;
       state.editing = null;
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      //get all category
+      .addCase(getAllCategorys.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(
+        getAllCategorys.fulfilled,
+        (state, action: PayloadAction<CategoryType[]>) => {
+          state.loading = false;
+          state.categorys = action.payload;
+        }
+      )
+      .addCase(getAllCategorys.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || "Failed to fetch categories";
+      });
   },
 });
 

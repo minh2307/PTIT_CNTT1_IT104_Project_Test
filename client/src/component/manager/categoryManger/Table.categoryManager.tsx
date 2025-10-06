@@ -3,18 +3,17 @@ import type { TableProps } from "antd";
 import type { CategoryType } from "../../../interface/category.interface";
 import CategoryPagination from "./Pagination.categoryManager";
 
-import history from "../../../assets/history.png";
-import science from "../../../assets/science.png";
-import entertainment from "../../../assets/entertainment.png";
-import life from "../../../assets/life.png";
 import { useAppDispatch } from "../../../hooks/redux.hook";
 import {
-  openAdd,
   openDelete,
   openEdit,
-} from "../../../redux/manager/categoryModal.redux";
+} from "../../../redux/manager/modal/categoryModal.redux";
 
-export const CategoryTable = () => {
+type Props = {
+  data: CategoryType[] | undefined;
+};
+
+export const CategoryTable = ({ data }: Props) => {
   const dispatch = useAppDispatch();
 
   const columns: TableProps<CategoryType>["columns"] = [
@@ -30,9 +29,9 @@ export const CategoryTable = () => {
       title: "Tên danh mục",
       key: "categoryName",
       render: (_, record) => (
-        <div className="flex ">
-          <img src={record.categoryImg} alt="" />
-          <p className="flex flex flex-wrap content-around ms-3">
+        <div className="flex">
+          <img src={record.categoryImg} alt="" className="w-[38px] h-[38px]" />
+          <p className="flex flex-wrap content-around ms-3">
             {record.categoryName}
           </p>
         </div>
@@ -70,48 +69,49 @@ export const CategoryTable = () => {
     },
   ];
 
-  const data: CategoryType[] = [
-    {
-      id: 1,
-      categoryName: "Lịch sử",
-      categoryImg: history,
-    },
-    {
-      id: 2,
-      categoryName: "Khoa học",
-      categoryImg: science,
-    },
-    {
-      id: 3,
-      categoryName: "Giải trí",
-      categoryImg: entertainment,
-    },
-    {
-      id: 4,
-      categoryName: "Đời sống",
-      categoryImg: life,
-    },
-    {
-      id: 1,
-      categoryName: "Lịch sử",
-      categoryImg: history,
-    },
-    {
-      id: 2,
-      categoryName: "Khoa học",
-      categoryImg: science,
-    },
-    {
-      id: 3,
-      categoryName: "Giải trí",
-      categoryImg: entertainment,
-    },
-    {
-      id: 4,
-      categoryName: "Đời sống",
-      categoryImg: life,
-    },
-  ];
+  // const data: CategoryType[] = [
+  //   {
+  //     id: 1,
+  //     categoryName: "Lịch sử",
+  //     categoryImg: history,
+  //   },
+  //   {
+  //     id: 2,
+  //     categoryName: "Khoa học",
+  //     categoryImg: science,
+  //   },
+  //   {
+  //     id: 3,
+  //     categoryName: "Giải trí",
+  //     categoryImg: entertainment,
+  //   },
+  //   {
+  //     id: 4,
+  //     categoryName: "Đời sống",
+  //     categoryImg: life,
+  //   },
+  //   {
+  //     id: 1,
+  //     categoryName: "Lịch sử",
+  //     categoryImg: history,
+  //   },
+  //   {
+  //     id: 2,
+  //     categoryName: "Khoa học",
+  //     categoryImg: science,
+  //   },
+  //   {
+  //     id: 3,
+  //     categoryName: "Giải trí",
+  //     categoryImg: entertainment,
+  //   },
+  //   {
+  //     id: 4,
+  //     categoryName: "Đời sống",
+  //     categoryImg: life,
+  //   },
+  // ];
+
   return (
     <>
       <Table<CategoryType>
