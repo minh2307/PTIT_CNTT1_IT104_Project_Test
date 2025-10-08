@@ -3,7 +3,12 @@ import type {
   InitialStateType,
   TestType,
 } from "../../../interface/test.interface";
-import { getAllTests } from "../../../apis/test.api";
+import {
+  getAllTests,
+  addTest,
+  editTest,
+  deleteTest,
+} from "../../../apis/test.api";
 
 const initialState: InitialStateType = {
   isOpen: false,
@@ -55,6 +60,52 @@ const testModalSlice = createSlice({
       .addCase(getAllTests.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message || "Failed to fetch tests";
+      });
+    // add test
+    builder
+      .addCase(addTest.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(addTest.fulfilled, (state, action: PayloadAction<TestType>) => {
+        state.loading = false;
+        state.tests?.push(action.payload);
+      })
+      .addCase(addTest.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || "Failed to add test";
+      })
+      // edit test
+      .addCase(editTest.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(editTest.fulfilled, (state, action: PayloadAction<TestType>) => {
+        state.loading = false;
+        const index = state.tests?.findIndex((t) => t.id === action.payload.id);
+        if (index !== undefined && index >= 0 && state.tests) {
+          state.tests[index] = action.payload;
+        }
+      })
+      .addCase(editTest.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || "Failed to edit test";
+      })
+      // delete test
+      .addCase(deleteTest.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(
+        deleteTest.fulfilled,
+        (state, action: PayloadAction<{ id: number }>) => {
+          state.loading = false;
+          state.tests = state.tests?.filter((t) => t.id !== action.payload.id);
+        }
+      )
+      .addCase(deleteTest.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || "Failed to delete test";
       });
   },
 });

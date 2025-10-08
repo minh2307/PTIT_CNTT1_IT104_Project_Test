@@ -3,7 +3,12 @@ import type {
   CategoryType,
   InitialStateType,
 } from "../../../interface/category.interface";
-import { getAllCategorys } from "../../../apis/category.api";
+import {
+  addCategory,
+  deleteCategory,
+  editCategory,
+  getAllCategorys,
+} from "../../../apis/category.api";
 
 const initialState: InitialStateType = {
   isOpen: false,
@@ -56,6 +61,62 @@ const categoryModalSlice = createSlice({
       .addCase(getAllCategorys.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message || "Failed to fetch categories";
+      })
+      // add category
+      .addCase(addCategory.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(
+        addCategory.fulfilled,
+        (state, action: PayloadAction<CategoryType>) => {
+          state.loading = false;
+          state.categorys?.push(action.payload);
+        }
+      )
+      .addCase(addCategory.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || "Failed to add category";
+      })
+      // edit category
+      .addCase(editCategory.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(
+        editCategory.fulfilled,
+        (state, action: PayloadAction<CategoryType>) => {
+          state.loading = false;
+
+          const index = state.categorys?.findIndex(
+            (cat) => cat.id === action.payload.id
+          );
+          if (index !== undefined && index >= 0 && state.categorys) {
+            state.categorys[index] = action.payload;
+          }
+        }
+      )
+      .addCase(editCategory.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || "Failed to edit category";
+      })
+      // delete category
+      .addCase(deleteCategory.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(
+        deleteCategory.fulfilled,
+        (state, action: PayloadAction<{ id: number }>) => {
+          state.loading = false;
+          state.categorys = state.categorys?.filter(
+            (cat) => cat.id !== action.payload.id
+          );
+        }
+      )
+      .addCase(deleteCategory.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || "Failed to delete category";
       });
   },
 });

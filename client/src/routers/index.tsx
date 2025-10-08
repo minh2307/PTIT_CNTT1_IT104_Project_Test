@@ -13,6 +13,10 @@ const Test = lazy(() => import("../component/manager/TestManager/Index"));
 
 export const router = createBrowserRouter([
   {
+    path: "*",
+    element: <LazyLoader element={Login} />,
+  },
+  {
     path: "/login",
     element: <LazyLoader element={Login} />,
   },
@@ -37,5 +41,4 @@ export const router = createBrowserRouter([
       },
     ],
   },
-  {},
 ]);

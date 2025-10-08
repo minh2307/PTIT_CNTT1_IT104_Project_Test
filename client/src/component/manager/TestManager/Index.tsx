@@ -7,17 +7,15 @@ import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hook";
 import { openAdd } from "../../../redux/manager/modal/testModal.redux";
 import { useEffect } from "react";
 import { getAllTests } from "../../../apis/test.api";
+import { getAllCategorys } from "../../../apis/category.api";
 
 const Index = () => {
   const dispatch = useAppDispatch();
-  const {
-    tests: storeTest,
-    error,
-    loading,
-  } = useAppSelector((state) => state.testModal);
+  const { tests: storeTest } = useAppSelector((state) => state.testModal);
 
   useEffect(() => {
     dispatch(getAllTests());
+    dispatch(getAllCategorys());
   }, [dispatch]);
 
   const handleChange = (value: string) => {

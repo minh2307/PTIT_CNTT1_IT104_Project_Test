@@ -10,6 +10,7 @@ import {
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hook";
 import { useEffect, useMemo } from "react";
 import { getAllCategorys } from "../../../apis/category.api";
+import type { CategoryType } from "../../../interface/category.interface";
 
 type Props = {
   data: TestType[] | undefined;
@@ -17,11 +18,6 @@ type Props = {
 
 export const TableTest = ({ data }: Props) => {
   const dispatch = useAppDispatch();
-  type Cat = {
-    id?: number | string;
-    categoryName?: string;
-    categoryImg?: string;
-  };
 
   const { categorys: categories } = useAppSelector(
     (state) => state.categoryModal
@@ -32,9 +28,13 @@ export const TableTest = ({ data }: Props) => {
   }, [dispatch]);
 
   const categoryMap = useMemo(() => {
-    const obj: Record<string | number, string> = {};
-    (categories || []).forEach((c: Cat) => {
-      obj[c.id || ""] = c.categoryName || c.categoryImg || "";
+    const obj: Record<string | number, { name: string; img: string }> = {};
+
+    (categories || []).forEach((c: CategoryType) => {
+      obj[c.id || ""] = {
+        name: c.categoryName || "",
+        img: c.categoryImg || "",
+      };
     });
 
     return obj;
@@ -64,12 +64,16 @@ export const TableTest = ({ data }: Props) => {
       onHeaderCell: () => ({
         style: { backgroundColor: "#1f2937", color: "#fff", width: "20%" },
       }),
-      render: (_, record) => (
-        <div className="flex items-center gap-2">
-          <img src={record.image} alt={String(record.testName || "image")} />
-          <p>{categoryMap[record.categoryId || ""] ?? record.categoryId}</p>
-        </div>
-      ),
+      render: (_, record) => {
+        const category = categoryMap[record.categoryId || ""];
+
+        return (
+          <div className="flex items-center gap-2">
+            <img src={category.img} alt={String(record.testName || "image")} />
+            <p>{category.name ?? record.categoryId}</p>
+          </div>
+        );
+      },
     },
     {
       title: "Số câu hỏi",

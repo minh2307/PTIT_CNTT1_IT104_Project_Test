@@ -11,19 +11,37 @@
         {
           "content": "Which is the part of the computer system that one can physically touch?",
           "answers": [
-            { "answer": "Data" },
-            { "answer": "Operating systems" },
-            { "answer": "Hardware", "isCorrected": true },
-            { "answer": "Software" }
+            {
+              "answer": "Data"
+            },
+            {
+              "answer": "Operating systems"
+            },
+            {
+              "answer": "Hardware",
+              "isCorrected": true
+            },
+            {
+              "answer": "Software"
+            }
           ]
         },
         {
           "content": "Which device is used to input text into a computer?",
           "answers": [
-            { "answer": "Monitor" },
-            { "answer": "Printer" },
-            { "answer": "Keyboard", "isCorrected": true },
-            { "answer": "Speaker" }
+            {
+              "answer": "Monitor"
+            },
+            {
+              "answer": "Printer"
+            },
+            {
+              "answer": "Keyboard",
+              "isCorrected": true
+            },
+            {
+              "answer": "Speaker"
+            }
           ]
         }
       ]
@@ -39,19 +57,37 @@
         {
           "content": "What planet is known as the Red Planet?",
           "answers": [
-            { "answer": "Earth" },
-            { "answer": "Mars", "isCorrected": true },
-            { "answer": "Jupiter" },
-            { "answer": "Venus" }
+            {
+              "answer": "Earth"
+            },
+            {
+              "answer": "Mars",
+              "isCorrected": true
+            },
+            {
+              "answer": "Jupiter"
+            },
+            {
+              "answer": "Venus"
+            }
           ]
         },
         {
           "content": "What gas do plants absorb from the atmosphere?",
           "answers": [
-            { "answer": "Oxygen" },
-            { "answer": "Nitrogen" },
-            { "answer": "Carbon dioxide", "isCorrected": true },
-            { "answer": "Hydrogen" }
+            {
+              "answer": "Oxygen"
+            },
+            {
+              "answer": "Nitrogen"
+            },
+            {
+              "answer": "Carbon dioxide",
+              "isCorrected": true
+            },
+            {
+              "answer": "Hydrogen"
+            }
           ]
         }
       ]
@@ -67,19 +103,37 @@
         {
           "content": "Who directed the movie 'Inception'?",
           "answers": [
-            { "answer": "Christopher Nolan", "isCorrected": true },
-            { "answer": "James Cameron" },
-            { "answer": "Steven Spielberg" },
-            { "answer": "Quentin Tarantino" }
+            {
+              "answer": "Christopher Nolan",
+              "isCorrected": true
+            },
+            {
+              "answer": "James Cameron"
+            },
+            {
+              "answer": "Steven Spielberg"
+            },
+            {
+              "answer": "Quentin Tarantino"
+            }
           ]
         },
         {
           "content": "Which company owns the 'Marvel Studios' brand?",
           "answers": [
-            { "answer": "Sony Pictures" },
-            { "answer": "Netflix" },
-            { "answer": "Disney", "isCorrected": true },
-            { "answer": "Warner Bros" }
+            {
+              "answer": "Sony Pictures"
+            },
+            {
+              "answer": "Netflix"
+            },
+            {
+              "answer": "Disney",
+              "isCorrected": true
+            },
+            {
+              "answer": "Warner Bros"
+            }
           ]
         }
       ]
@@ -95,47 +149,317 @@
         {
           "content": "Who was the first President of the United States?",
           "answers": [
-            { "answer": "George Washington", "isCorrected": true },
-            { "answer": "Abraham Lincoln" },
-            { "answer": "John Adams" },
-            { "answer": "Thomas Jefferson" }
+            {
+              "answer": "George Washington",
+              "isCorrected": true
+            },
+            {
+              "answer": "Abraham Lincoln"
+            },
+            {
+              "answer": "John Adams"
+            },
+            {
+              "answer": "Thomas Jefferson"
+            }
           ]
         },
         {
           "content": "In which year did World War II end?",
           "answers": [
-            { "answer": "1945", "isCorrected": true },
-            { "answer": "1940" },
-            { "answer": "1939" },
-            { "answer": "1950" }
+            {
+              "answer": "1945",
+              "isCorrected": true
+            },
+            {
+              "answer": "1940"
+            },
+            {
+              "answer": "1939"
+            },
+            {
+              "answer": "1950"
+            }
           ]
         }
       ]
     },
     {
       "id": 5,
-      "testName": "Geography Challenge",
-      "categoryId": 5,
-      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711191/life_mfrvlx.png",
+      "testName": "Ancient Civilizations",
+      "categoryId": 1,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711301/history2_lplbhn.png",
       "playTime": 8,
-      "playAmount": 6,
+      "playAmount": 10,
       "questions": [
         {
-          "content": "What is the capital city of Japan?",
+          "content": "Which ancient civilization built the pyramids?",
           "answers": [
-            { "answer": "Beijing" },
-            { "answer": "Tokyo", "isCorrected": true },
-            { "answer": "Seoul" },
-            { "answer": "Bangkok" }
+            { "answer": "Romans" },
+            { "answer": "Egyptians", "isCorrected": true },
+            { "answer": "Greeks" },
+            { "answer": "Mayans" }
           ]
         },
         {
-          "content": "Which continent is the Sahara Desert located in?",
+          "content": "Where did the Olympic Games originate?",
           "answers": [
-            { "answer": "Asia" },
-            { "answer": "Africa", "isCorrected": true },
-            { "answer": "Australia" },
-            { "answer": "South America" }
+            { "answer": "Egypt" },
+            { "answer": "Rome" },
+            { "answer": "Greece", "isCorrected": true },
+            { "answer": "China" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "testName": "Modern World History",
+      "categoryId": 1,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711309/history3_vfkjme.png",
+      "playTime": 12,
+      "playAmount": 8,
+      "questions": [
+        {
+          "content": "Who was the British Prime Minister during World War II?",
+          "answers": [
+            { "answer": "Winston Churchill", "isCorrected": true },
+            { "answer": "Tony Blair" },
+            { "answer": "Margaret Thatcher" },
+            { "answer": "Neville Chamberlain" }
+          ]
+        },
+        {
+          "content": "The Cold War was primarily between which two nations?",
+          "answers": [
+            { "answer": "USA and USSR", "isCorrected": true },
+            { "answer": "USA and China" },
+            { "answer": "France and Germany" },
+            { "answer": "UK and Japan" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "testName": "Human Body Challenge",
+      "categoryId": 2,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711333/science2_c0sqwj.png",
+      "playTime": 10,
+      "playAmount": 10,
+      "questions": [
+        {
+          "content": "Which organ pumps blood through the body?",
+          "answers": [
+            { "answer": "Liver" },
+            { "answer": "Heart", "isCorrected": true },
+            { "answer": "Brain" },
+            { "answer": "Kidney" }
+          ]
+        },
+        {
+          "content": "Which system controls your breathing?",
+          "answers": [
+            { "answer": "Digestive system" },
+            { "answer": "Respiratory system", "isCorrected": true },
+            { "answer": "Nervous system" },
+            { "answer": "Circulatory system" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "testName": "Physics in Action",
+      "categoryId": 2,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711348/science3_dvotxy.png",
+      "playTime": 7,
+      "playAmount": 6,
+      "questions": [
+        {
+          "content": "What is the force that pulls objects toward Earth?",
+          "answers": [
+            { "answer": "Magnetism" },
+            { "answer": "Gravity", "isCorrected": true },
+            { "answer": "Friction" },
+            { "answer": "Inertia" }
+          ]
+        },
+        {
+          "content": "Which law explains the motion of planets around the Sun?",
+          "answers": [
+            { "answer": "Newton's Laws", "isCorrected": true },
+            { "answer": "Ohm’s Law" },
+            { "answer": "Boyle’s Law" },
+            { "answer": "Hooke’s Law" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "testName": "Famous Movies Quiz",
+      "categoryId": 3,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711359/entertainment2_rcf3od.png",
+      "playTime": 6,
+      "playAmount": 9,
+      "questions": [
+        {
+          "content": "Which movie features the quote 'I'll be back'?",
+          "answers": [
+            { "answer": "The Terminator", "isCorrected": true },
+            { "answer": "Predator" },
+            { "answer": "RoboCop" },
+            { "answer": "Die Hard" }
+          ]
+        },
+        {
+          "content": "Which actor plays Iron Man in the Marvel movies?",
+          "answers": [
+            { "answer": "Chris Evans" },
+            { "answer": "Robert Downey Jr.", "isCorrected": true },
+            { "answer": "Mark Ruffalo" },
+            { "answer": "Tom Holland" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "testName": "Music Legends",
+      "categoryId": 3,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711366/entertainment3_emlnah.png",
+      "playTime": 8,
+      "playAmount": 8,
+      "questions": [
+        {
+          "content": "Who is known as the 'King of Pop'?",
+          "answers": [
+            { "answer": "Michael Jackson", "isCorrected": true },
+            { "answer": "Elvis Presley" },
+            { "answer": "Prince" },
+            { "answer": "Freddie Mercury" }
+          ]
+        },
+        {
+          "content": "Which band released the song 'Bohemian Rhapsody'?",
+          "answers": [
+            { "answer": "The Beatles" },
+            { "answer": "Queen", "isCorrected": true },
+            { "answer": "Pink Floyd" },
+            { "answer": "U2" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "testName": "Healthy Living",
+      "categoryId": 4,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711381/life2_ytgrvx.png",
+      "playTime": 9,
+      "playAmount": 11,
+      "questions": [
+        {
+          "content": "Which vitamin is produced when a person is exposed to sunlight?",
+          "answers": [
+            { "answer": "Vitamin A" },
+            { "answer": "Vitamin D", "isCorrected": true },
+            { "answer": "Vitamin C" },
+            { "answer": "Vitamin B12" }
+          ]
+        },
+        {
+          "content": "What is the recommended amount of sleep for adults?",
+          "answers": [
+            { "answer": "4-5 hours" },
+            { "answer": "7-9 hours", "isCorrected": true },
+            { "answer": "10-12 hours" },
+            { "answer": "Less than 6 hours" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "testName": "Food and Nutrition",
+      "categoryId": 4,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711390/life3_q6fphz.png",
+      "playTime": 8,
+      "playAmount": 10,
+      "questions": [
+        {
+          "content": "Which of these is a source of healthy fat?",
+          "answers": [
+            { "answer": "Avocado", "isCorrected": true },
+            { "answer": "Butter" },
+            { "answer": "Soda" },
+            { "answer": "White bread" }
+          ]
+        },
+        {
+          "content": "What mineral helps in the formation of strong bones?",
+          "answers": [
+            { "answer": "Calcium", "isCorrected": true },
+            { "answer": "Iron" },
+            { "answer": "Sodium" },
+            { "answer": "Potassium" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "testName": "Scientific Discoveries",
+      "categoryId": 2,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711399/science4_dncxep.png",
+      "playTime": 12,
+      "playAmount": 15,
+      "questions": [
+        {
+          "content": "Who developed the theory of relativity?",
+          "answers": [
+            { "answer": "Albert Einstein", "isCorrected": true },
+            { "answer": "Isaac Newton" },
+            { "answer": "Nikola Tesla" },
+            { "answer": "Stephen Hawking" }
+          ]
+        },
+        {
+          "content": "Who discovered penicillin?",
+          "answers": [
+            { "answer": "Alexander Fleming", "isCorrected": true },
+            { "answer": "Louis Pasteur" },
+            { "answer": "Marie Curie" },
+            { "answer": "Gregor Mendel" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "testName": "World Leaders Quiz",
+      "categoryId": 1,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711409/history4_qc7hoy.png",
+      "playTime": 10,
+      "playAmount": 9,
+      "questions": [
+        {
+          "content": "Who was the first woman Prime Minister of the UK?",
+          "answers": [
+            { "answer": "Margaret Thatcher", "isCorrected": true },
+            { "answer": "Theresa May" },
+            { "answer": "Angela Merkel" },
+            { "answer": "Indira Gandhi" }
+          ]
+        },
+        {
+          "content": "Who is known as the Father of India?",
+          "answers": [
+            { "answer": "Jawaharlal Nehru" },
+            { "answer": "Mahatma Gandhi", "isCorrected": true },
+            { "answer": "Subhash Chandra Bose" },
+            { "answer": "B. R. Ambedkar" }
           ]
         }
       ]
