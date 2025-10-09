@@ -14,4 +14,6 @@ export interface InitialStateType extends ModalState {
   categorys?: CategoryType[];
   loading?: boolean;
   error?: string | null;
+  page?: number;
+  total?: number;
 }

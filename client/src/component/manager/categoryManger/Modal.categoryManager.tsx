@@ -21,7 +21,7 @@ export const CategoryModal = () => {
 
   const [form] = Form.useForm<CategoryType>();
   const [fileList, setFileList] = useState<UploadFile[]>([]);
-  const [loadingImg, setLoadingImg] = useState(false); // 🌀 Trạng thái loading khi upload ảnh
+  const [loadingImg, setLoadingImg] = useState(false);
 
   const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUD_NAME;
   const CLOUDINARY_UPLOAD_PRESET = import.meta.env.VITE_UPLOAD_PRESET;

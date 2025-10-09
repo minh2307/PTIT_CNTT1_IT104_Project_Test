@@ -69,49 +69,6 @@ export const CategoryTable = ({ data }: Props) => {
     },
   ];
 
-  // const data: CategoryType[] = [
-  //   {
-  //     id: 1,
-  //     categoryName: "Lịch sử",
-  //     categoryImg: history,
-  //   },
-  //   {
-  //     id: 2,
-  //     categoryName: "Khoa học",
-  //     categoryImg: science,
-  //   },
-  //   {
-  //     id: 3,
-  //     categoryName: "Giải trí",
-  //     categoryImg: entertainment,
-  //   },
-  //   {
-  //     id: 4,
-  //     categoryName: "Đời sống",
-  //     categoryImg: life,
-  //   },
-  //   {
-  //     id: 1,
-  //     categoryName: "Lịch sử",
-  //     categoryImg: history,
-  //   },
-  //   {
-  //     id: 2,
-  //     categoryName: "Khoa học",
-  //     categoryImg: science,
-  //   },
-  //   {
-  //     id: 3,
-  //     categoryName: "Giải trí",
-  //     categoryImg: entertainment,
-  //   },
-  //   {
-  //     id: 4,
-  //     categoryName: "Đời sống",
-  //     categoryImg: life,
-  //   },
-  // ];
-
   return (
     <>
       <Table<CategoryType>

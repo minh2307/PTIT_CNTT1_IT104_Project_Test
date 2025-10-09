@@ -9,13 +9,17 @@ import { getAllCategorys } from "../../../apis/category.api";
 
 const Index = () => {
   const dispatch = useAppDispatch();
-  const { categorys: storeCategory } = useAppSelector(
-    (state) => state.categoryModal
-  );
+  const {
+    categorys: storeCategory,
+    page,
+    total,
+  } = useAppSelector((state) => state.categoryModal);
 
   useEffect(() => {
-    dispatch(getAllCategorys());
-  }, [dispatch]);
+    dispatch(getAllCategorys({ page: page ?? 1, limit: 10 }));
+  }, [dispatch, page, total]);
+
+  console.log(storeCategory);
 
   return (
     <div className="min-h-screen flex flex-col">

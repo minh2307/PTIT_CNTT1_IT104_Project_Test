@@ -195,19 +195,37 @@
         {
           "content": "Which ancient civilization built the pyramids?",
           "answers": [
-            { "answer": "Romans" },
-            { "answer": "Egyptians", "isCorrected": true },
-            { "answer": "Greeks" },
-            { "answer": "Mayans" }
+            {
+              "answer": "Romans"
+            },
+            {
+              "answer": "Egyptians",
+              "isCorrected": true
+            },
+            {
+              "answer": "Greeks"
+            },
+            {
+              "answer": "Mayans"
+            }
           ]
         },
         {
           "content": "Where did the Olympic Games originate?",
           "answers": [
-            { "answer": "Egypt" },
-            { "answer": "Rome" },
-            { "answer": "Greece", "isCorrected": true },
-            { "answer": "China" }
+            {
+              "answer": "Egypt"
+            },
+            {
+              "answer": "Rome"
+            },
+            {
+              "answer": "Greece",
+              "isCorrected": true
+            },
+            {
+              "answer": "China"
+            }
           ]
         }
       ]
@@ -223,19 +241,37 @@
         {
           "content": "Who was the British Prime Minister during World War II?",
           "answers": [
-            { "answer": "Winston Churchill", "isCorrected": true },
-            { "answer": "Tony Blair" },
-            { "answer": "Margaret Thatcher" },
-            { "answer": "Neville Chamberlain" }
+            {
+              "answer": "Winston Churchill",
+              "isCorrected": true
+            },
+            {
+              "answer": "Tony Blair"
+            },
+            {
+              "answer": "Margaret Thatcher"
+            },
+            {
+              "answer": "Neville Chamberlain"
+            }
           ]
         },
         {
           "content": "The Cold War was primarily between which two nations?",
           "answers": [
-            { "answer": "USA and USSR", "isCorrected": true },
-            { "answer": "USA and China" },
-            { "answer": "France and Germany" },
-            { "answer": "UK and Japan" }
+            {
+              "answer": "USA and USSR",
+              "isCorrected": true
+            },
+            {
+              "answer": "USA and China"
+            },
+            {
+              "answer": "France and Germany"
+            },
+            {
+              "answer": "UK and Japan"
+            }
           ]
         }
       ]
@@ -251,19 +287,37 @@
         {
           "content": "Which organ pumps blood through the body?",
           "answers": [
-            { "answer": "Liver" },
-            { "answer": "Heart", "isCorrected": true },
-            { "answer": "Brain" },
-            { "answer": "Kidney" }
+            {
+              "answer": "Liver"
+            },
+            {
+              "answer": "Heart",
+              "isCorrected": true
+            },
+            {
+              "answer": "Brain"
+            },
+            {
+              "answer": "Kidney"
+            }
           ]
         },
         {
           "content": "Which system controls your breathing?",
           "answers": [
-            { "answer": "Digestive system" },
-            { "answer": "Respiratory system", "isCorrected": true },
-            { "answer": "Nervous system" },
-            { "answer": "Circulatory system" }
+            {
+              "answer": "Digestive system"
+            },
+            {
+              "answer": "Respiratory system",
+              "isCorrected": true
+            },
+            {
+              "answer": "Nervous system"
+            },
+            {
+              "answer": "Circulatory system"
+            }
           ]
         }
       ]
@@ -279,19 +333,37 @@
         {
           "content": "What is the force that pulls objects toward Earth?",
           "answers": [
-            { "answer": "Magnetism" },
-            { "answer": "Gravity", "isCorrected": true },
-            { "answer": "Friction" },
-            { "answer": "Inertia" }
+            {
+              "answer": "Magnetism"
+            },
+            {
+              "answer": "Gravity",
+              "isCorrected": true
+            },
+            {
+              "answer": "Friction"
+            },
+            {
+              "answer": "Inertia"
+            }
           ]
         },
         {
           "content": "Which law explains the motion of planets around the Sun?",
           "answers": [
-            { "answer": "Newton's Laws", "isCorrected": true },
-            { "answer": "Ohm’s Law" },
-            { "answer": "Boyle’s Law" },
-            { "answer": "Hooke’s Law" }
+            {
+              "answer": "Newton's Laws",
+              "isCorrected": true
+            },
+            {
+              "answer": "Ohm’s Law"
+            },
+            {
+              "answer": "Boyle’s Law"
+            },
+            {
+              "answer": "Hooke’s Law"
+            }
           ]
         }
       ]
@@ -307,19 +379,37 @@
         {
           "content": "Which movie features the quote 'I'll be back'?",
           "answers": [
-            { "answer": "The Terminator", "isCorrected": true },
-            { "answer": "Predator" },
-            { "answer": "RoboCop" },
-            { "answer": "Die Hard" }
+            {
+              "answer": "The Terminator",
+              "isCorrected": true
+            },
+            {
+              "answer": "Predator"
+            },
+            {
+              "answer": "RoboCop"
+            },
+            {
+              "answer": "Die Hard"
+            }
           ]
         },
         {
           "content": "Which actor plays Iron Man in the Marvel movies?",
           "answers": [
-            { "answer": "Chris Evans" },
-            { "answer": "Robert Downey Jr.", "isCorrected": true },
-            { "answer": "Mark Ruffalo" },
-            { "answer": "Tom Holland" }
+            {
+              "answer": "Chris Evans"
+            },
+            {
+              "answer": "Robert Downey Jr.",
+              "isCorrected": true
+            },
+            {
+              "answer": "Mark Ruffalo"
+            },
+            {
+              "answer": "Tom Holland"
+            }
           ]
         }
       ]
@@ -335,19 +425,37 @@
         {
           "content": "Who is known as the 'King of Pop'?",
           "answers": [
-            { "answer": "Michael Jackson", "isCorrected": true },
-            { "answer": "Elvis Presley" },
-            { "answer": "Prince" },
-            { "answer": "Freddie Mercury" }
+            {
+              "answer": "Michael Jackson",
+              "isCorrected": true
+            },
+            {
+              "answer": "Elvis Presley"
+            },
+            {
+              "answer": "Prince"
+            },
+            {
+              "answer": "Freddie Mercury"
+            }
           ]
         },
         {
           "content": "Which band released the song 'Bohemian Rhapsody'?",
           "answers": [
-            { "answer": "The Beatles" },
-            { "answer": "Queen", "isCorrected": true },
-            { "answer": "Pink Floyd" },
-            { "answer": "U2" }
+            {
+              "answer": "The Beatles"
+            },
+            {
+              "answer": "Queen",
+              "isCorrected": true
+            },
+            {
+              "answer": "Pink Floyd"
+            },
+            {
+              "answer": "U2"
+            }
           ]
         }
       ]
@@ -363,19 +471,37 @@
         {
           "content": "Which vitamin is produced when a person is exposed to sunlight?",
           "answers": [
-            { "answer": "Vitamin A" },
-            { "answer": "Vitamin D", "isCorrected": true },
-            { "answer": "Vitamin C" },
-            { "answer": "Vitamin B12" }
+            {
+              "answer": "Vitamin A"
+            },
+            {
+              "answer": "Vitamin D",
+              "isCorrected": true
+            },
+            {
+              "answer": "Vitamin C"
+            },
+            {
+              "answer": "Vitamin B12"
+            }
           ]
         },
         {
           "content": "What is the recommended amount of sleep for adults?",
           "answers": [
-            { "answer": "4-5 hours" },
-            { "answer": "7-9 hours", "isCorrected": true },
-            { "answer": "10-12 hours" },
-            { "answer": "Less than 6 hours" }
+            {
+              "answer": "4-5 hours"
+            },
+            {
+              "answer": "7-9 hours",
+              "isCorrected": true
+            },
+            {
+              "answer": "10-12 hours"
+            },
+            {
+              "answer": "Less than 6 hours"
+            }
           ]
         }
       ]
@@ -391,19 +517,37 @@
         {
           "content": "Which of these is a source of healthy fat?",
           "answers": [
-            { "answer": "Avocado", "isCorrected": true },
-            { "answer": "Butter" },
-            { "answer": "Soda" },
-            { "answer": "White bread" }
+            {
+              "answer": "Avocado",
+              "isCorrected": true
+            },
+            {
+              "answer": "Butter"
+            },
+            {
+              "answer": "Soda"
+            },
+            {
+              "answer": "White bread"
+            }
           ]
         },
         {
           "content": "What mineral helps in the formation of strong bones?",
           "answers": [
-            { "answer": "Calcium", "isCorrected": true },
-            { "answer": "Iron" },
-            { "answer": "Sodium" },
-            { "answer": "Potassium" }
+            {
+              "answer": "Calcium",
+              "isCorrected": true
+            },
+            {
+              "answer": "Iron"
+            },
+            {
+              "answer": "Sodium"
+            },
+            {
+              "answer": "Potassium"
+            }
           ]
         }
       ]
@@ -419,19 +563,37 @@
         {
           "content": "Who developed the theory of relativity?",
           "answers": [
-            { "answer": "Albert Einstein", "isCorrected": true },
-            { "answer": "Isaac Newton" },
-            { "answer": "Nikola Tesla" },
-            { "answer": "Stephen Hawking" }
+            {
+              "answer": "Albert Einstein",
+              "isCorrected": true
+            },
+            {
+              "answer": "Isaac Newton"
+            },
+            {
+              "answer": "Nikola Tesla"
+            },
+            {
+              "answer": "Stephen Hawking"
+            }
           ]
         },
         {
           "content": "Who discovered penicillin?",
           "answers": [
-            { "answer": "Alexander Fleming", "isCorrected": true },
-            { "answer": "Louis Pasteur" },
-            { "answer": "Marie Curie" },
-            { "answer": "Gregor Mendel" }
+            {
+              "answer": "Alexander Fleming",
+              "isCorrected": true
+            },
+            {
+              "answer": "Louis Pasteur"
+            },
+            {
+              "answer": "Marie Curie"
+            },
+            {
+              "answer": "Gregor Mendel"
+            }
           ]
         }
       ]
@@ -447,25 +609,103 @@
         {
           "content": "Who was the first woman Prime Minister of the UK?",
           "answers": [
-            { "answer": "Margaret Thatcher", "isCorrected": true },
-            { "answer": "Theresa May" },
-            { "answer": "Angela Merkel" },
-            { "answer": "Indira Gandhi" }
+            {
+              "answer": "Margaret Thatcher",
+              "isCorrected": true
+            },
+            {
+              "answer": "Theresa May"
+            },
+            {
+              "answer": "Angela Merkel"
+            },
+            {
+              "answer": "Indira Gandhi"
+            }
           ]
         },
         {
           "content": "Who is known as the Father of India?",
           "answers": [
-            { "answer": "Jawaharlal Nehru" },
-            { "answer": "Mahatma Gandhi", "isCorrected": true },
-            { "answer": "Subhash Chandra Bose" },
-            { "answer": "B. R. Ambedkar" }
+            {
+              "answer": "Jawaharlal Nehru"
+            },
+            {
+              "answer": "Mahatma Gandhi",
+              "isCorrected": true
+            },
+            {
+              "answer": "Subhash Chandra Bose"
+            },
+            {
+              "answer": "B. R. Ambedkar"
+            }
           ]
         }
       ]
     }
   ],
   "category": [
+    {
+      "id": 1,
+      "categoryName": "Lịch sử",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711184/history_pupic4.png"
+    },
+    {
+      "id": 2,
+      "categoryName": "Khoa học",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711199/science_dlkedc.png"
+    },
+    {
+      "id": 3,
+      "categoryName": "Giải trí",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711111/entertainment_pzrota.png"
+    },
+    {
+      "id": 4,
+      "categoryName": "Đời sống",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711191/life_mfrvlx.png"
+    },
+    {
+      "id": 1,
+      "categoryName": "Lịch sử",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711184/history_pupic4.png"
+    },
+    {
+      "id": 2,
+      "categoryName": "Khoa học",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711199/science_dlkedc.png"
+    },
+    {
+      "id": 3,
+      "categoryName": "Giải trí",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711111/entertainment_pzrota.png"
+    },
+    {
+      "id": 4,
+      "categoryName": "Đời sống",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711191/life_mfrvlx.png"
+    },
+    {
+      "id": 1,
+      "categoryName": "Lịch sử",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711184/history_pupic4.png"
+    },
+    {
+      "id": 2,
+      "categoryName": "Khoa học",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711199/science_dlkedc.png"
+    },
+    {
+      "id": 3,
+      "categoryName": "Giải trí",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711111/entertainment_pzrota.png"
+    },
+    {
+      "id": 4,
+      "categoryName": "Đời sống",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711191/life_mfrvlx.png"
+    },
     {
       "id": 1,
       "categoryName": "Lịch sử",

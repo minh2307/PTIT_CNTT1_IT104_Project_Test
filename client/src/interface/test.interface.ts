@@ -22,4 +22,6 @@ export interface InitialStateType extends ModalState {
   tests?: TestType[];
   loading?: boolean;
   error?: string | null;
+  page?: number;
+  total?: number;
 }

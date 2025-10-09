@@ -1,6 +1,5 @@
 import { Button, Space, Table, type TableProps } from "antd";
-
-import CategoryPagination from "../categoryManger/Pagination.categoryManager";
+import TestPaination from "./Paination.testManager";
 import type { TestType } from "../../../interface/test.interface";
 
 import {
@@ -19,12 +18,12 @@ type Props = {
 export const TableTest = ({ data }: Props) => {
   const dispatch = useAppDispatch();
 
-  const { categorys: categories } = useAppSelector(
+  const { categorys: categories, page } = useAppSelector(
     (state) => state.categoryModal
   );
 
   useEffect(() => {
-    dispatch(getAllCategorys());
+    dispatch(getAllCategorys({ page: page ?? 1, limit: 10 }));
   }, [dispatch]);
 
   const categoryMap = useMemo(() => {
@@ -129,7 +128,7 @@ export const TableTest = ({ data }: Props) => {
         pagination={false}
         className="my-5"
       />
-      <CategoryPagination></CategoryPagination>
+      <TestPaination total={data?.length ?? 0}></TestPaination>
     </div>
   );
 };

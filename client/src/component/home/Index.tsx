@@ -16,7 +16,7 @@ import { getAllCategorys } from "../../apis/category.api";
 const Index = () => {
   const dispatch = useAppDispatch();
 
-  const { tests } = useAppSelector((state) => state.testModal);
+  const { tests, page: pagTest } = useAppSelector((state) => state.testModal);
 
   const { categorys: categories } = useAppSelector(
     (state) => state.categoryModal
@@ -32,7 +32,7 @@ const Index = () => {
   }, [categories]);
 
   useEffect(() => {
-    dispatch(getAllTests());
+    dispatch(getAllTests({ page: pagTest ?? 1, limit: 10 }));
     dispatch(getAllCategorys());
   }, [dispatch]);
 

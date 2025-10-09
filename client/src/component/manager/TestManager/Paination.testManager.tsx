@@ -1,20 +1,17 @@
-import React from "react";
 import { Pagination } from "antd";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hook";
-import { getAllCategorys } from "../../../apis/category.api";
-import { setPagination } from "../../../redux/manager/modal/categoryModal.redux";
+import { getAllTests } from "../../../apis/test.api";
+import { setPagination } from "../../../redux/manager/modal/testModal.redux";
 
-const CategoryPagination = () => {
+const TestPaination = () => {
   const dispatch = useAppDispatch();
-  const { page, total } = useAppSelector((state) => state.categoryModal);
+  const { page, total } = useAppSelector((state) => state.testModal);
 
   const PAGE_SIZE = 10;
-
   const handlePageChange = (newPage: number) => {
     dispatch(setPagination({ page: newPage }));
-    dispatch(getAllCategorys({ page: newPage, limit: PAGE_SIZE }));
+    dispatch(getAllTests({ page: newPage, limit: PAGE_SIZE }));
   };
-
   return (
     <Pagination
       align="center"
@@ -27,4 +24,4 @@ const CategoryPagination = () => {
   );
 };
 
-export default CategoryPagination;
+export default TestPaination;

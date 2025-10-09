@@ -17,6 +17,8 @@ const initialState: InitialStateType = {
   categorys: [],
   loading: false,
   error: null,
+  page: 1,
+  total: 0,
 };
 
 const categoryModalSlice = createSlice({
@@ -43,6 +45,9 @@ const categoryModalSlice = createSlice({
       state.mode = null;
       state.editing = null;
     },
+    setPagination(state, action: PayloadAction<{ page: number }>) {
+      state.page = action.payload.page;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -53,9 +58,13 @@ const categoryModalSlice = createSlice({
       })
       .addCase(
         getAllCategorys.fulfilled,
-        (state, action: PayloadAction<CategoryType[]>) => {
+        (
+          state,
+          action: PayloadAction<{ data: CategoryType[]; total?: number }>
+        ) => {
           state.loading = false;
-          state.categorys = action.payload;
+          state.categorys = action.payload.data;
+          state.total = action.payload.total;
         }
       )
       .addCase(getAllCategorys.rejected, (state, action) => {
@@ -121,6 +130,6 @@ const categoryModalSlice = createSlice({
   },
 });
 
-export const { openAdd, openEdit, openDelete, close } =
+export const { openAdd, openEdit, openDelete, close, setPagination } =
   categoryModalSlice.actions;
 export default categoryModalSlice.reducer;

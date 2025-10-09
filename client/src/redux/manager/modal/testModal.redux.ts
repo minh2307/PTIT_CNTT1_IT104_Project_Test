@@ -17,6 +17,8 @@ const initialState: InitialStateType = {
   tests: [],
   loading: false,
   error: null,
+  page: 1,
+  total: 0,
 };
 
 const testModalSlice = createSlice({
@@ -43,6 +45,9 @@ const testModalSlice = createSlice({
       state.mode = null;
       state.editing = null;
     },
+    setPagination(state, action: PayloadAction<{ page: number }>) {
+      state.page = action.payload.page;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -52,9 +57,13 @@ const testModalSlice = createSlice({
       })
       .addCase(
         getAllTests.fulfilled,
-        (state, action: PayloadAction<TestType[]>) => {
+        (
+          state,
+          action: PayloadAction<{ data: TestType[]; total?: number }>
+        ) => {
           state.loading = false;
-          state.tests = action.payload;
+          state.tests = action.payload.data;
+          state.total = action.payload.total;
         }
       )
       .addCase(getAllTests.rejected, (state, action) => {
@@ -110,5 +119,6 @@ const testModalSlice = createSlice({
   },
 });
 
-export const { openAdd, openEdit, openDelete, close } = testModalSlice.actions;
+export const { openAdd, openEdit, openDelete, close, setPagination } =
+  testModalSlice.actions;
 export default testModalSlice.reducer;
