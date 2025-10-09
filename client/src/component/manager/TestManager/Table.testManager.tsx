@@ -128,7 +128,7 @@ export const TableTest = ({ data }: Props) => {
         pagination={false}
         className="my-5"
       />
-      <TestPaination total={data?.length ?? 0}></TestPaination>
+      <TestPaination></TestPaination>
     </div>
   );
 };
