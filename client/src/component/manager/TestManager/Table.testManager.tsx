@@ -2,14 +2,12 @@ import { Button, Space, Table, type TableProps } from "antd";
 import TestPaination from "./Paination.testManager";
 import type { TestType } from "../../../interface/test.interface";
 
-import {
-  openDelete,
-  openEdit,
-} from "../../../redux/manager/modal/testModal.redux";
+import { openDelete } from "../../../redux/manager/modal/testModal.redux";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hook";
 import { useEffect, useMemo } from "react";
 import { getAllCategorys } from "../../../apis/category.api";
 import type { CategoryType } from "../../../interface/category.interface";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   data: TestType[] | undefined;
@@ -17,6 +15,7 @@ type Props = {
 
 export const TableTest = ({ data }: Props) => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const { categorys: categories, page } = useAppSelector(
     (state) => state.categoryModal
@@ -102,7 +101,7 @@ export const TableTest = ({ data }: Props) => {
         <Space size="middle">
           <Button
             className="!bg-[#FFC107]"
-            onClick={() => dispatch(openEdit(record))}
+            onClick={() => navigate(`/manager/tests/edit/${record.id}`)}
           >
             Sửa
           </Button>

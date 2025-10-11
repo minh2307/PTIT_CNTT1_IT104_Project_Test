@@ -69,16 +69,15 @@ const testModalSlice = createSlice({
       .addCase(getAllTests.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message || "Failed to fetch tests";
-      });
-    // add test
-    builder
+      })
+      // add test
       .addCase(addTest.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
       .addCase(addTest.fulfilled, (state, action: PayloadAction<TestType>) => {
         state.loading = false;
-        state.tests?.push(action.payload);
+        state.tests = [action.payload, ...(state.tests ?? [])];
       })
       .addCase(addTest.rejected, (state, action) => {
         state.loading = false;
@@ -116,6 +115,24 @@ const testModalSlice = createSlice({
         state.loading = false;
         state.error = action.error.message || "Failed to delete test";
       });
+    // delete question
+    //       .addCase(deleteQuestion.pending, (state) => {
+    //         state.loading = true;
+    //         state.error = null;
+    //       })
+    //       .addCase(deleteQuestion.fulfilled, (state, action) => {
+    //         const { testId, questionId } = action.payload;
+    //         const test = state.tests?.find((t) => t.id === testId);
+    //         if (test) {
+    //           test.questions = (test.questions ?? []).filter(
+    //             (q) => q.idQuestions !== questionId
+    //           );
+    //         }
+    //       })
+    //       .addCase(deleteQuestion.rejected, (state, action) => {
+    //         state.loading = false;
+    //         state.error = action.error.message || "Failed to delete question";
+    //       });
   },
 });
 

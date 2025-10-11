@@ -18,7 +18,7 @@ export const Nav = () => {
         <NavLink to="/manager/category" className={navLinkCls}>
           Danh mục
         </NavLink>
-        <NavLink to="/manager/test" className={navLinkCls}>
+        <NavLink to="/manager/tests" className={navLinkCls}>
           Bài test
         </NavLink>
         <NavLink

@@ -1,7 +1,11 @@
 import { Input } from "antd";
 import { NavLink } from "react-router-dom";
 
-export const Nav = () => {
+type Prop = {
+  onChangeSearch: (s: string) => void;
+};
+
+export const Nav = ({ onChangeSearch }: Prop) => {
   const logOut = () => {
     localStorage.removeItem("currentUser");
   };
@@ -12,7 +16,10 @@ export const Nav = () => {
         QuizzForge
       </h3>
       <div className="flex-wrap content-around">
-        <Input placeholder="Tìm kiếm bài test" />
+        <Input
+          placeholder="Tìm kiếm bài test"
+          onChange={(e) => onChangeSearch(e.target.value)}
+        />
       </div>
       <div className="flex flex-wrap content-around gap-3 text-[12px] ">
         <NavLink to="/" className={" text-white"}>

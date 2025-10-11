@@ -47,7 +47,7 @@ export const addTest = createAsyncThunk(
 export const editTest = createAsyncThunk(
   "test/editTest",
   async (data: { id: number } & TestType) => {
-    const response = await baseApi.put(`/tests/${data.id}`, data);
+    const response = await baseApi.patch(`/tests/${data.id}`, data);
     return response.data;
   }
 );

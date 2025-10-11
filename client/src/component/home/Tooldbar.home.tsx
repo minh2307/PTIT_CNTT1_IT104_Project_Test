@@ -1,12 +1,37 @@
 import { Tag } from "antd";
-import React from "react";
+import { useState } from "react";
 
-export const Tooldbar = () => {
+type Props = {
+  handleSort: (sortDir: "asc" | "desc") => void;
+};
+
+export const Toolbar = ({ handleSort }: Props) => {
+  const [active, setActive] = useState<"asc" | "desc" | null>(null);
+
+  const handleClick = (dir: "asc" | "desc") => {
+    setActive(dir);
+    handleSort(dir);
+  };
+
   return (
-    <div>
-      <span>Sắp xếp theo: </span>
-      <Tag>Lượt chơi tăng dần</Tag>
-      <Tag>Lượt chơi giảm dần</Tag>
+    <div className="flex items-center gap-2">
+      <span className="text-sm text-gray-600">Sắp xếp theo:</span>
+
+      <Tag
+        color={active === "asc" ? "gold" : undefined}
+        style={{ cursor: "pointer" }}
+        onClick={() => handleClick("asc")}
+      >
+        Lượt chơi tăng dần
+      </Tag>
+
+      <Tag
+        color={active === "desc" ? "gold" : undefined}
+        style={{ cursor: "pointer" }}
+        onClick={() => handleClick("desc")}
+      >
+        Lượt chơi giảm dần
+      </Tag>
     </div>
   );
 };

@@ -10,6 +10,10 @@ const CategoryManager = lazy(
 );
 
 const Test = lazy(() => import("../component/manager/TestManager/Index"));
+const TestFormPage = lazy(
+  () => import("../component/manager/TestManager/AddTestManager/Index")
+);
+const Quizz = lazy(() => import("../component/quizzTest/index"));
 
 export const router = createBrowserRouter([
   {
@@ -36,9 +40,26 @@ export const router = createBrowserRouter([
         element: <LazyLoader element={CategoryManager} />,
       },
       {
-        path: "test",
-        element: <LazyLoader element={Test} />,
+        path: "tests",
+        children: [
+          {
+            index: true,
+            element: <LazyLoader element={Test} />,
+          },
+          {
+            path: "add",
+            element: <LazyLoader element={TestFormPage} />,
+          },
+          {
+            path: "edit/:id",
+            element: <LazyLoader element={TestFormPage} />,
+          },
+        ],
       },
     ],
+  },
+  {
+    path: "/quizz/:id",
+    element: <LazyLoader element={Quizz}></LazyLoader>,
   },
 ]);

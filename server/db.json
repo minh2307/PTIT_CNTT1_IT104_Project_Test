@@ -9,6 +9,7 @@
       "playAmount": 5,
       "questions": [
         {
+          "idQuestions": 1,
           "content": "Which is the part of the computer system that one can physically touch?",
           "answers": [
             {
@@ -27,6 +28,7 @@
           ]
         },
         {
+          "idQuestions": 2,
           "content": "Which device is used to input text into a computer?",
           "answers": [
             {
@@ -55,6 +57,7 @@
       "playAmount": 12,
       "questions": [
         {
+          "idQuestions": 1,
           "content": "What planet is known as the Red Planet?",
           "answers": [
             {
@@ -73,6 +76,7 @@
           ]
         },
         {
+          "idQuestions": 2,
           "content": "What gas do plants absorb from the atmosphere?",
           "answers": [
             {
@@ -93,52 +97,6 @@
       ]
     },
     {
-      "id": 3,
-      "testName": "Entertainment Trivia",
-      "categoryId": 3,
-      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711111/entertainment_pzrota.png",
-      "playTime": 5,
-      "playAmount": 7,
-      "questions": [
-        {
-          "content": "Who directed the movie 'Inception'?",
-          "answers": [
-            {
-              "answer": "Christopher Nolan",
-              "isCorrected": true
-            },
-            {
-              "answer": "James Cameron"
-            },
-            {
-              "answer": "Steven Spielberg"
-            },
-            {
-              "answer": "Quentin Tarantino"
-            }
-          ]
-        },
-        {
-          "content": "Which company owns the 'Marvel Studios' brand?",
-          "answers": [
-            {
-              "answer": "Sony Pictures"
-            },
-            {
-              "answer": "Netflix"
-            },
-            {
-              "answer": "Disney",
-              "isCorrected": true
-            },
-            {
-              "answer": "Warner Bros"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": 4,
       "testName": "History Quiz",
       "categoryId": 4,
@@ -147,6 +105,7 @@
       "playAmount": 9,
       "questions": [
         {
+          "idQuestions": 1,
           "content": "Who was the first President of the United States?",
           "answers": [
             {
@@ -165,6 +124,55 @@
           ]
         },
         {
+          "idQuestions": 2,
+          "content": "In which year did World War II end?",
+          "answers": [
+            {
+              "answer": "1945",
+              "isCorrected": true
+            },
+            {
+              "answer": "1940"
+            },
+            {
+              "answer": "1939"
+            },
+            {
+              "answer": "1950"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "testName": "History Quiz",
+      "categoryId": 4,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711191/life_mfrvlx.png",
+      "playTime": 10,
+      "playAmount": 9,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Who was the first President of the United States?",
+          "answers": [
+            {
+              "answer": "George Washington",
+              "isCorrected": true
+            },
+            {
+              "answer": "Abraham Lincoln"
+            },
+            {
+              "answer": "John Adams"
+            },
+            {
+              "answer": "Thomas Jefferson"
+            }
+          ]
+        },
+        {
+          "idQuestions": 2,
           "content": "In which year did World War II end?",
           "answers": [
             {
@@ -193,6 +201,7 @@
       "playAmount": 10,
       "questions": [
         {
+          "idQuestions": 1,
           "content": "Which ancient civilization built the pyramids?",
           "answers": [
             {
@@ -211,6 +220,7 @@
           ]
         },
         {
+          "idQuestions": 2,
           "content": "Where did the Olympic Games originate?",
           "answers": [
             {
@@ -239,6 +249,7 @@
       "playAmount": 8,
       "questions": [
         {
+          "idQuestions": 1,
           "content": "Who was the British Prime Minister during World War II?",
           "answers": [
             {
@@ -257,6 +268,7 @@
           ]
         },
         {
+          "idQuestions": 2,
           "content": "The Cold War was primarily between which two nations?",
           "answers": [
             {
@@ -285,6 +297,7 @@
       "playAmount": 10,
       "questions": [
         {
+          "idQuestions": 1,
           "content": "Which organ pumps blood through the body?",
           "answers": [
             {
@@ -303,6 +316,7 @@
           ]
         },
         {
+          "idQuestions": 2,
           "content": "Which system controls your breathing?",
           "answers": [
             {
@@ -331,6 +345,7 @@
       "playAmount": 6,
       "questions": [
         {
+          "idQuestions": 1,
           "content": "What is the force that pulls objects toward Earth?",
           "answers": [
             {
@@ -349,6 +364,7 @@
           ]
         },
         {
+          "idQuestions": 2,
           "content": "Which law explains the motion of planets around the Sun?",
           "answers": [
             {
@@ -369,52 +385,6 @@
       ]
     },
     {
-      "id": 9,
-      "testName": "Famous Movies Quiz",
-      "categoryId": 3,
-      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711359/entertainment2_rcf3od.png",
-      "playTime": 6,
-      "playAmount": 9,
-      "questions": [
-        {
-          "content": "Which movie features the quote 'I'll be back'?",
-          "answers": [
-            {
-              "answer": "The Terminator",
-              "isCorrected": true
-            },
-            {
-              "answer": "Predator"
-            },
-            {
-              "answer": "RoboCop"
-            },
-            {
-              "answer": "Die Hard"
-            }
-          ]
-        },
-        {
-          "content": "Which actor plays Iron Man in the Marvel movies?",
-          "answers": [
-            {
-              "answer": "Chris Evans"
-            },
-            {
-              "answer": "Robert Downey Jr.",
-              "isCorrected": true
-            },
-            {
-              "answer": "Mark Ruffalo"
-            },
-            {
-              "answer": "Tom Holland"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": 10,
       "testName": "Music Legends",
       "categoryId": 3,
@@ -423,6 +393,7 @@
       "playAmount": 8,
       "questions": [
         {
+          "idQuestions": 1,
           "content": "Who is known as the 'King of Pop'?",
           "answers": [
             {
@@ -441,6 +412,7 @@
           ]
         },
         {
+          "idQuestions": 2,
           "content": "Which band released the song 'Bohemian Rhapsody'?",
           "answers": [
             {
@@ -469,6 +441,7 @@
       "playAmount": 11,
       "questions": [
         {
+          "idQuestions": 1,
           "content": "Which vitamin is produced when a person is exposed to sunlight?",
           "answers": [
             {
@@ -487,6 +460,7 @@
           ]
         },
         {
+          "idQuestions": 2,
           "content": "What is the recommended amount of sleep for adults?",
           "answers": [
             {
@@ -515,6 +489,7 @@
       "playAmount": 10,
       "questions": [
         {
+          "idQuestions": 1,
           "content": "Which of these is a source of healthy fat?",
           "answers": [
             {
@@ -533,6 +508,7 @@
           ]
         },
         {
+          "idQuestions": 2,
           "content": "What mineral helps in the formation of strong bones?",
           "answers": [
             {
@@ -561,6 +537,7 @@
       "playAmount": 15,
       "questions": [
         {
+          "idQuestions": 1,
           "content": "Who developed the theory of relativity?",
           "answers": [
             {
@@ -579,6 +556,7 @@
           ]
         },
         {
+          "idQuestions": 2,
           "content": "Who discovered penicillin?",
           "answers": [
             {
@@ -607,6 +585,7 @@
       "playAmount": 9,
       "questions": [
         {
+          "idQuestions": 1,
           "content": "Who was the first woman Prime Minister of the UK?",
           "answers": [
             {
@@ -625,6 +604,7 @@
           ]
         },
         {
+          "idQuestions": 2,
           "content": "Who is known as the Father of India?",
           "answers": [
             {
@@ -646,66 +626,6 @@
     }
   ],
   "category": [
-    {
-      "id": 1,
-      "categoryName": "Lịch sử",
-      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711184/history_pupic4.png"
-    },
-    {
-      "id": 2,
-      "categoryName": "Khoa học",
-      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711199/science_dlkedc.png"
-    },
-    {
-      "id": 3,
-      "categoryName": "Giải trí",
-      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711111/entertainment_pzrota.png"
-    },
-    {
-      "id": 4,
-      "categoryName": "Đời sống",
-      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711191/life_mfrvlx.png"
-    },
-    {
-      "id": 1,
-      "categoryName": "Lịch sử",
-      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711184/history_pupic4.png"
-    },
-    {
-      "id": 2,
-      "categoryName": "Khoa học",
-      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711199/science_dlkedc.png"
-    },
-    {
-      "id": 3,
-      "categoryName": "Giải trí",
-      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711111/entertainment_pzrota.png"
-    },
-    {
-      "id": 4,
-      "categoryName": "Đời sống",
-      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711191/life_mfrvlx.png"
-    },
-    {
-      "id": 1,
-      "categoryName": "Lịch sử",
-      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711184/history_pupic4.png"
-    },
-    {
-      "id": 2,
-      "categoryName": "Khoa học",
-      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711199/science_dlkedc.png"
-    },
-    {
-      "id": 3,
-      "categoryName": "Giải trí",
-      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711111/entertainment_pzrota.png"
-    },
-    {
-      "id": 4,
-      "categoryName": "Đời sống",
-      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711191/life_mfrvlx.png"
-    },
     {
       "id": 1,
       "categoryName": "Lịch sử",

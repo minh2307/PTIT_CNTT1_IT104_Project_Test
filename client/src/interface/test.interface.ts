@@ -1,12 +1,15 @@
+export interface QuestionType {
+  idQuestions?: number;
+  content?: string;
+  answers?: { answer?: string; isCorrected?: boolean }[];
+}
+
 export interface TestType {
   id?: number;
   testName?: string;
-  categoryId?: string;
+  categoryId?: number;
   question?: number;
-  questions?: {
-    content?: string;
-    answers?: { answer?: string; isCorrected?: boolean }[];
-  }[];
+  questions?: QuestionType[];
   playTime?: number;
   image?: string;
   playAmount?: number;

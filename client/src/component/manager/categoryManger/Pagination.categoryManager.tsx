@@ -1,4 +1,3 @@
-import React from "react";
 import { Pagination } from "antd";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hook";
 import { getAllCategorys } from "../../../apis/category.api";
@@ -8,7 +7,7 @@ const CategoryPagination = () => {
   const dispatch = useAppDispatch();
   const { page, total } = useAppSelector((state) => state.categoryModal);
 
-  const PAGE_SIZE = 10;
+  const PAGE_SIZE = 6;
 
   const handlePageChange = (newPage: number) => {
     dispatch(setPagination({ page: newPage }));
