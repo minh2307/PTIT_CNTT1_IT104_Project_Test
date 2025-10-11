@@ -16,7 +16,7 @@ const Index = () => {
   } = useAppSelector((state) => state.categoryModal);
 
   useEffect(() => {
-    dispatch(getAllCategorys({ page: page ?? 1, limit: 10 }));
+    dispatch(getAllCategorys({ page: page ?? 1, limit: 6 }));
   }, [dispatch, page, total]);
 
   console.log(storeCategory);

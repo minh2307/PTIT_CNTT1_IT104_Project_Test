@@ -12,6 +12,9 @@ const HomePaination = () => {
     dispatch(setPagination({ page: newPage }));
     dispatch(getAllTests({ page: newPage, limit: PAGE_SIZE }));
   };
+
+  console.log("page-total", page, total);
+
   return (
     <Pagination
       align="center"

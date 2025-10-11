@@ -8,6 +8,7 @@ import {
   addTest,
   editTest,
   deleteTest,
+  deleteQuestionTest,
 } from "../../../apis/test.api";
 
 const initialState: InitialStateType = {
@@ -114,25 +115,25 @@ const testModalSlice = createSlice({
       .addCase(deleteTest.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message || "Failed to delete test";
+      })
+      // delete question test
+      .addCase(deleteQuestionTest.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(deleteQuestionTest.fulfilled, (state, action) => {
+        const { id, questionId } = action.payload;
+        const test = state.tests?.find((t) => t.id === id);
+        if (test) {
+          test.questions = (test.questions ?? []).filter(
+            (q) => q.idQuestions !== questionId
+          );
+        }
+      })
+      .addCase(deleteQuestionTest.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || "Failed to delete question";
       });
-    // delete question
-    //       .addCase(deleteQuestion.pending, (state) => {
-    //         state.loading = true;
-    //         state.error = null;
-    //       })
-    //       .addCase(deleteQuestion.fulfilled, (state, action) => {
-    //         const { testId, questionId } = action.payload;
-    //         const test = state.tests?.find((t) => t.id === testId);
-    //         if (test) {
-    //           test.questions = (test.questions ?? []).filter(
-    //             (q) => q.idQuestions !== questionId
-    //           );
-    //         }
-    //       })
-    //       .addCase(deleteQuestion.rejected, (state, action) => {
-    //         state.loading = false;
-    //         state.error = action.error.message || "Failed to delete question";
-    //       });
   },
 });
 

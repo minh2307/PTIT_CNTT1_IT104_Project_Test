@@ -7,11 +7,14 @@ import { useAppDispatch, useAppSelector } from "../../../../hooks/redux.hook";
 import { addTest, editTest, getAllTests } from "../../../../apis/test.api";
 import { getAllCategorys } from "../../../../apis/category.api";
 import { TestModal } from "./Modal.addTestManager";
+import { ModalDelete } from "./ModalDelete.addTestManger";
 
 export const AddTest = () => {
   const dispatch = useAppDispatch();
   const [form] = Form.useForm();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalDelete, setIsModalDelete] = useState(false);
+  const [questionIdDelete, setQuestionIdDelete] = useState<number>(0);
 
   const handleModal = () => {
     setIsModalOpen(true);
@@ -142,9 +145,12 @@ export const AddTest = () => {
           </div>
         </div>
       </Form>
-
-      <FormTable data={data} handleModal={handleModal}></FormTable>
-
+      <FormTable
+        data={data}
+        handleModal={handleModal}
+        isModalDelete={setIsModalDelete}
+        questionIdDelete={setQuestionIdDelete}
+      ></FormTable>
       <TestModal
         open={isModalOpen}
         onCancel={() => setIsModalOpen(false)}
@@ -154,6 +160,13 @@ export const AddTest = () => {
           setIsModalOpen(false);
         }}
       />
+
+      <ModalDelete
+        isModal={isModalDelete}
+        setIsModal={setIsModalDelete}
+        questionIdDelete={questionIdDelete}
+        testIdDelete={Number(id)}
+      ></ModalDelete>
     </div>
   );
 };

@@ -50,14 +50,14 @@ const Index = () => {
     dispatch(
       getAllTests({
         page: pagTest ?? 1,
-        limit: 10,
+        limit: 8,
         search: debouncedSearch,
         sortBy: "playAmount",
         sortDir: sortDir,
       })
     );
     dispatch(getAllCategorys());
-  }, [dispatch, debouncedSearch, sortDir]);
+  }, [dispatch, pagTest, debouncedSearch, sortDir]);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -71,9 +71,9 @@ const Index = () => {
           <Toolbar handleSort={setSortDir}></Toolbar>
           <div className="">
             <div className="flex gap-4 mt-4 flex-wrap">
-              {tests?.map((item) => (
+              {tests?.map((item, index) => (
                 <Card
-                  key={item.id}
+                  key={index}
                   bodyStyle={{ padding: 0 }}
                   className="w-full sm:w-[48%] shadow-md !p-2"
                 >

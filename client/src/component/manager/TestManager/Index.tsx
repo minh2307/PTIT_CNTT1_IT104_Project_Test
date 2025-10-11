@@ -24,7 +24,7 @@ const Index = () => {
     dispatch(
       getAllTests({
         page: page ?? 1,
-        limit: 10,
+        limit: 8,
         sortBy: sortBy === "name" ? "testName" : "playTime",
         sortDir,
         search: debouncedSearch,
@@ -32,8 +32,6 @@ const Index = () => {
     );
     dispatch(getAllCategorys());
   }, [dispatch, page, sortBy, debouncedSearch, sortDir]);
-
-  console.log(storeTest);
 
   const handleChange = (value: string) => {
     if (value == "time_asc") {

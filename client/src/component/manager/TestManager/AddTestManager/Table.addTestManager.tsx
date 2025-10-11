@@ -8,9 +8,16 @@ import { useMemo } from "react";
 type Prop = {
   data?: TestType[];
   handleModal: () => void;
+  isModalDelete: (c: boolean) => void;
+  questionIdDelete: (n: number) => void;
 };
 
-export const FormTable = ({ data, handleModal }: Prop) => {
+export const FormTable = ({
+  data,
+  handleModal,
+  isModalDelete,
+  questionIdDelete,
+}: Prop) => {
   const rows = useMemo(() => {
     if (!data?.[0]?.questions) return [];
     return data[0].questions.map((q, i) => ({
@@ -58,6 +65,8 @@ export const FormTable = ({ data, handleModal }: Prop) => {
             className="!bg-[#DC3545] !text-white"
             onClick={() => {
               console.log("Xoá:", record);
+              questionIdDelete(record.idQuestions ?? 0);
+              isModalDelete(true);
             }}
           >
             Xoá

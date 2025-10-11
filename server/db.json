@@ -346,25 +346,63 @@
       "questions": [
         {
           "idQuestions": 1,
-          "content": "What is the force that pulls objects toward Earth?",
+          "content": "Which law explains the motion of planets around the Sun?",
           "answers": [
             {
-              "answer": "Magnetism"
-            },
-            {
-              "answer": "Gravity",
+              "answer": "Newton's Laws",
               "isCorrected": true
             },
             {
-              "answer": "Friction"
+              "answer": "Ohm’s Law"
             },
             {
-              "answer": "Inertia"
+              "answer": "Boyle’s Law"
+            },
+            {
+              "answer": "Hooke’s Law"
             }
           ]
         },
         {
           "idQuestions": 2,
+          "content": "Which law explains the motion of planets around the Sun?",
+          "answers": [
+            {
+              "answer": "Newton's Laws",
+              "isCorrected": true
+            },
+            {
+              "answer": "Ohm’s Law"
+            },
+            {
+              "answer": "Boyle’s Law"
+            },
+            {
+              "answer": "Hooke’s Law"
+            }
+          ]
+        },
+        {
+          "idQuestions": 3,
+          "content": "Which law explains the motion of planets around the Sun?",
+          "answers": [
+            {
+              "answer": "Newton's Laws",
+              "isCorrected": true
+            },
+            {
+              "answer": "Ohm’s Law"
+            },
+            {
+              "answer": "Boyle’s Law"
+            },
+            {
+              "answer": "Hooke’s Law"
+            }
+          ]
+        },
+        {
+          "idQuestions": 4,
           "content": "Which law explains the motion of planets around the Sun?",
           "answers": [
             {

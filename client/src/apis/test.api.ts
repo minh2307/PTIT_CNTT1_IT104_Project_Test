@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { baseApi } from "./base.api";
-import type { TestType } from "../interface/test.interface";
+import type { QuestionType, TestType } from "../interface/test.interface";
 
 // get all test api
 export const getAllTests = createAsyncThunk(
@@ -58,5 +58,23 @@ export const deleteTest = createAsyncThunk(
   async (id: number) => {
     await baseApi.delete(`/tests/${id}`);
     return { id };
+  }
+);
+
+// delete question test
+export const deleteQuestionTest = createAsyncThunk(
+  "test/deleteQuestionTest",
+  async ({ id, questionId }: { id: number; questionId: number }) => {
+    // Lấy test
+    const { data: test } = await baseApi.get(`/tests/${id}`);
+
+    // Xóa question và update
+    await baseApi.patch(`/tests/${id}`, {
+      questions: test.questions.filter(
+        (q: QuestionType) => q.idQuestions !== questionId
+      ),
+    });
+
+    return { id, questionId };
   }
 );
