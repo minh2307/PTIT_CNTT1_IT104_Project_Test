@@ -1,21 +1,24 @@
 import { createBrowserRouter } from "react-router-dom";
-import { lazy } from "react";
 import { LazyLoader } from "./LazyLoader.router";
+import { lazy } from "react";
+import { PrivateRoute } from "./PrivateRoute.router";
 
+// Lazy load components
 const Login = lazy(() => import("../component/Login"));
 const Register = lazy(() => import("../component/Register"));
 const Home = lazy(() => import("../component/home/Index"));
 const CategoryManager = lazy(
   () => import("../component/manager/categoryManger/Index")
 );
-
 const Test = lazy(() => import("../component/manager/TestManager/Index"));
 const TestFormPage = lazy(
   () => import("../component/manager/TestManager/AddTestManager/Index")
 );
 const Quizz = lazy(() => import("../component/quizzTest/index"));
 
+// Router setup
 export const router = createBrowserRouter([
+  // Public routes
   {
     path: "*",
     element: <LazyLoader element={Login} />,
@@ -33,33 +36,39 @@ export const router = createBrowserRouter([
     element: <LazyLoader element={Home} />,
   },
   {
-    path: "/manager",
+    path: "/quizz/:id",
+    element: <LazyLoader element={Quizz} />,
+  },
+
+  {
+    element: <PrivateRoute />,
     children: [
       {
-        path: "category",
-        element: <LazyLoader element={CategoryManager} />,
-      },
-      {
-        path: "tests",
+        path: "/manager",
         children: [
           {
-            index: true,
-            element: <LazyLoader element={Test} />,
+            path: "category",
+            element: <LazyLoader element={CategoryManager} />,
           },
           {
-            path: "add",
-            element: <LazyLoader element={TestFormPage} />,
-          },
-          {
-            path: "edit/:id",
-            element: <LazyLoader element={TestFormPage} />,
+            path: "tests",
+            children: [
+              {
+                index: true,
+                element: <LazyLoader element={Test} />,
+              },
+              {
+                path: "add",
+                element: <LazyLoader element={TestFormPage} />,
+              },
+              {
+                path: "edit/:id",
+                element: <LazyLoader element={TestFormPage} />,
+              },
+            ],
           },
         ],
       },
     ],
-  },
-  {
-    path: "/quizz/:id",
-    element: <LazyLoader element={Quizz}></LazyLoader>,
   },
 ]);

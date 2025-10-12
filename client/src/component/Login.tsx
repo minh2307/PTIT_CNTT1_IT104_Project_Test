@@ -18,7 +18,7 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  const { list: users, loading } = useAppSelector((state) => state.userSlice);
+  const { users, loading } = useAppSelector((state) => state.userSlice);
 
   console.log(users);
 

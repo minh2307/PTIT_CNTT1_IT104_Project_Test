@@ -51,6 +51,7 @@ export const AddTest = () => {
         playTime: data[0].playTime ?? "",
       };
 
+      // so sánh giá trị cũ với mới
       const isChanged = Object.keys(values).some(
         (key) => values[key] !== original[key]
       );

@@ -6,7 +6,7 @@ import { TestContent } from "./TestContent.quizzTest";
 import { QuizzModal } from "./Modal.quizzTest";
 import { useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux.hook";
-import { getAllTests } from "../../apis/test.api";
+import { getAllTests, updatePlayAmount } from "../../apis/test.api";
 
 const QuizTestPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -50,6 +50,8 @@ const QuizTestPage = () => {
         correct++;
       }
     });
+
+    dispatch(updatePlayAmount(Number(id)));
 
     setCorrectCount(correct);
     setIsModalOpen(true);

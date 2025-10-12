@@ -1,4 +1,4 @@
-import { Button, Radio, Space } from "antd";
+import { Button, Radio, Space, type RadioChangeEvent } from "antd";
 import { useEffect, useState } from "react";
 import type { QuestionType } from "../../interface/test.interface";
 
@@ -37,7 +37,7 @@ export const TestContent = ({
     console.log(userAnswers);
   }, [currentQuestion, userAnswers, questionIndex]);
 
-  const handleAnswerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleAnswerChange = (e: RadioChangeEvent) => {
     const answerIndex = Number(e.target.value);
     setSelectedAnswer(answerIndex);
     onSelectAnswer(questionIndex, answerIndex);
@@ -52,7 +52,7 @@ export const TestContent = ({
     }
   };
 
-  // ✅ Đếm giờ
+  // Đếm giờ
   const [timeLeft, setTimeLeft] = useState(() => {
     const saved = localStorage.getItem("timeLeft");
     return saved ? Number(saved) : time * 60;

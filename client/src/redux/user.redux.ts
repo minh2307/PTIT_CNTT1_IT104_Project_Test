@@ -3,13 +3,13 @@ import type { UserForm } from "../interface/user.interface";
 import { addUser, deleteUser, fetchUsers } from "../apis/user.api";
 
 interface UserState {
-  list: UserForm[];
+  users: UserForm[];
   loading: boolean;
   error?: string | null;
 }
 
 const initialState: UserState = {
-  list: [],
+  users: [],
   loading: false,
   error: null,
 };
@@ -26,7 +26,7 @@ const userSlice = createSlice({
       })
       .addCase(fetchUsers.fulfilled, (state, action) => {
         state.loading = false;
-        state.list = action.payload;
+        state.users = action.payload;
       })
       .addCase(fetchUsers.rejected, (state, action) => {
         state.loading = false;
@@ -38,7 +38,7 @@ const userSlice = createSlice({
         state.error = null;
       })
       .addCase(addUser.fulfilled, (state, action) => {
-        state.list.push(action.payload);
+        state.users.push(action.payload);
       })
       .addCase(addUser.rejected, (state, action) => {
         state.loading = false;
@@ -50,7 +50,7 @@ const userSlice = createSlice({
         state.error = null;
       })
       .addCase(deleteUser.fulfilled, (state, action) => {
-        state.list = state.list.filter(
+        state.users = state.users.filter(
           (user) => user.id !== Number(action.payload)
         );
       })
