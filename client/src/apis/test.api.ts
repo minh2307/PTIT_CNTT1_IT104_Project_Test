@@ -65,10 +65,8 @@ export const deleteTest = createAsyncThunk(
 export const deleteQuestionTest = createAsyncThunk(
   "test/deleteQuestionTest",
   async ({ id, questionId }: { id: number; questionId: number }) => {
-    // Lấy test
     const { data: test } = await baseApi.get(`/tests/${id}`);
 
-    // Xóa question và update
     await baseApi.patch(`/tests/${id}`, {
       questions: test.questions.filter(
         (q: QuestionType) => q.idQuestions !== questionId
@@ -76,5 +74,52 @@ export const deleteQuestionTest = createAsyncThunk(
     });
 
     return { id, questionId };
+  }
+);
+
+export const updateQuestionTest = createAsyncThunk(
+  "test/updateQuestionTest",
+  async ({ id, question }: { id: number; question: QuestionType }) => {
+    const { data: test } = await baseApi.get<TestType>(`/tests/${id}`);
+
+    const updatedQuestions = test.questions?.map((q) =>
+      q.idQuestions === question.idQuestions ? question : q
+    );
+
+    await baseApi.patch(`/tests/${id}`, {
+      questions: updatedQuestions,
+    });
+
+    return { id, question };
+  }
+);
+
+export const addQuestionTest = createAsyncThunk(
+  "test/addQuestionTest",
+  async ({ id, newQuestion }: { id: number; newQuestion: QuestionType }) => {
+    const { data: test } = await baseApi.get<TestType>(`/tests/${id}`);
+
+    // Tạo mảng câu hỏi mới (nếu test chưa có câu hỏi thì để mảng rỗng)
+    const updatedQuestions = [...(test.questions || []), newQuestion];
+
+    await baseApi.patch(`/tests/${id}`, {
+      questions: updatedQuestions,
+    });
+
+    return { id, newQuestion };
+  }
+);
+
+// update số lượt chơi
+export const updatePlayAmount = createAsyncThunk(
+  "test/updatePlayAmount",
+  async (id: number) => {
+    const { data: test } = await baseApi.get(`/tests/${id}`);
+
+    const updated = { ...test, playAmount: (test.playAmount ?? 0) + 1 };
+
+    const { data } = await baseApi.patch(`/tests/${id}`, updated);
+
+    return data as TestType;
   }
 );

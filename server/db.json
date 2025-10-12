@@ -29,20 +29,20 @@
         },
         {
           "idQuestions": 2,
-          "content": "Which device is used to input text into a computer?",
+          "content": "Which is the part of the computer system that one can physically touch?",
           "answers": [
             {
-              "answer": "Monitor"
+              "answer": "Data"
             },
             {
-              "answer": "Printer"
+              "answer": "Operating systems"
             },
             {
-              "answer": "Keyboard",
+              "answer": "Hardware",
               "isCorrected": true
             },
             {
-              "answer": "Speaker"
+              "answer": "Software"
             }
           ]
         }
@@ -357,9 +357,6 @@
             },
             {
               "answer": "Boyle’s Law"
-            },
-            {
-              "answer": "Hooke’s Law"
             }
           ]
         },
@@ -661,6 +658,63 @@
           ]
         }
       ]
+    },
+    {
+      "testName": "Nguyễn Sơn Min",
+      "categoryId": 1,
+      "playTime": 12,
+      "playAmount": 0,
+      "id": 15,
+      "questions": [
+        {
+          "idQuestions": 0,
+          "content": "ádssadă",
+          "answers": [
+            {
+              "answer": "ádá"
+            },
+            {
+              "answer": "áđádđ",
+              "isCorrected": true
+            }
+          ]
+        },
+        {
+          "idQuestions": 0,
+          "content": "đâsds",
+          "answers": [
+            {
+              "answer": "sss"
+            },
+            {
+              "answer": "sssss",
+              "isCorrected": true
+            },
+            {
+              "answer": "sss"
+            },
+            {
+              "answer": "ssssssssss"
+            }
+          ]
+        },
+        {
+          "idQuestions": 0,
+          "content": "aaaaaaaâ",
+          "answers": [
+            {
+              "answer": "sad"
+            },
+            {
+              "answer": "áđá",
+              "isCorrected": true
+            },
+            {
+              "answer": "áđá"
+            }
+          ]
+        }
+      ]
     }
   ],
   "category": [
@@ -683,6 +737,14 @@
       "id": 4,
       "categoryName": "Đời sống",
       "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711191/life_mfrvlx.png"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "minh23923@gmail.com",
+      "password": "123456789",
+      "role": "admin"
     }
   ]
 }

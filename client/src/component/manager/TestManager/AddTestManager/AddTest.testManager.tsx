@@ -4,7 +4,13 @@ import { FormTable } from "./Table.addTestManager";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../../hooks/redux.hook";
-import { addTest, editTest, getAllTests } from "../../../../apis/test.api";
+import {
+  addQuestionTest,
+  addTest,
+  editTest,
+  getAllTests,
+  updateQuestionTest,
+} from "../../../../apis/test.api";
 import { getAllCategorys } from "../../../../apis/category.api";
 import { TestModal } from "./Modal.addTestManager";
 import { ModalDelete } from "./ModalDelete.addTestManger";
@@ -17,18 +23,24 @@ export const AddTest = () => {
   const [questionIdDelete, setQuestionIdDelete] = useState<number>(0);
   const [questionIdEdit, setQuestionIdEdit] = useState<number>(0);
   const [modeModal, setModeModal] = useState<"add" | "edit">("add");
+  const [testId, setTestId] = useState<number>(0);
 
   const { id } = useParams();
+
+  useEffect(() => {
+    setTestId(testId);
+  }, []);
+
   const { tests } = useAppSelector((state) => state.testModal);
   const { categorys } = useAppSelector((state) => state.categoryModal);
 
-  const data = tests?.filter((e) => e.id === Number(id));
+  const data = tests?.filter((e) => e.id === testId);
 
   const handleModal = () => {
     setIsModalOpen(true);
   };
 
-  const onFinish: FormProps<TestType>["onFinish"] = (values) => {
+  const onFinish: FormProps<TestType>["onFinish"] = async (values) => {
     if (id) {
       if (!data || data.length === 0) {
         return;
@@ -51,7 +63,7 @@ export const AddTest = () => {
       console.log("edit", values);
       dispatch(
         editTest({
-          id: Number(id),
+          id: testId,
           ...values,
           playTime: Number(values.playTime),
           categoryId: Number(values.categoryId),
@@ -59,7 +71,20 @@ export const AddTest = () => {
       );
     } else {
       console.log("add", values);
-      dispatch(addTest(values));
+      const payload = {
+        ...values,
+        playTime: Number(values.playTime),
+        playAmount: 0,
+        categoryId: Number(values.categoryId),
+      };
+
+      console.log("add", payload);
+      const res = await dispatch(addTest(payload)).unwrap();
+
+      if (res?.id) {
+        console.log("Tạo test thành công, id:", res.id);
+        setTestId(res.id);
+      }
     }
 
     console.log("Success:", values);
@@ -110,7 +135,7 @@ export const AddTest = () => {
 
                 const isDuplicate = tests?.some(
                   (t) =>
-                    t.id !== Number(id) &&
+                    t.id !== testId &&
                     t.testName?.trim().toLowerCase() ===
                       value.trim().toLowerCase()
                 );
@@ -200,9 +225,17 @@ export const AddTest = () => {
       <TestModal
         open={isModalOpen}
         onCancel={() => setIsModalOpen(false)}
-        onSave={(question, answers) => {
-          console.log("Câu hỏi:", question);
-          console.log("Các đáp án:", answers);
+        onSave={(questionData) => {
+          if (modeModal === "edit") {
+            dispatch(
+              updateQuestionTest({ id: testId, question: questionData })
+            );
+          } else {
+            dispatch(
+              addQuestionTest({ id: testId, newQuestion: questionData })
+            );
+          }
+
           setIsModalOpen(false);
         }}
         editData={data?.[0]?.questions ?? []}
@@ -214,7 +247,7 @@ export const AddTest = () => {
         isModal={isModalDelete}
         setIsModal={setIsModalDelete}
         questionIdDelete={questionIdDelete}
-        testIdDelete={Number(id)}
+        testIdDelete={testId}
       ></ModalDelete>
     </div>
   );

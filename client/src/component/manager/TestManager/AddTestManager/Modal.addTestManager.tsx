@@ -9,7 +9,7 @@ import type {
 type Props = {
   open: boolean;
   onCancel: () => void;
-  onSave: (question: string, answers: string[]) => void;
+  onSave: (questionData: QuestionType) => void;
   editData?: QuestionType[];
   questionIdEdit: number;
   modeModal: "add" | "edit";
@@ -79,10 +79,16 @@ export const TestModal = ({
   };
 
   const handleDeleteAnswer = (index: number) => {
-    setAnswers(answers.filter((_, i) => i !== index));
-    if (correctIndex !== null && correctIndex > index) {
+    if (correctIndex === index) {
+      message.warning(
+        "Bạn vừa xoá đáp án đúng! Vui lòng chọn lại đáp án đúng."
+      );
+      setCorrectIndex(null);
+    } else if (correctIndex !== null && correctIndex > index) {
       setCorrectIndex(correctIndex - 1);
     }
+
+    setAnswers(answers.filter((_, i) => i !== index));
   };
 
   const handleSave = () => {
@@ -103,10 +109,10 @@ export const TestModal = ({
     }
 
     const invalidLength = trimmedAnswers.some(
-      (a) => a.length < 1 || a.length > 100
+      (a) => a.length < 3 || a.length > 100
     );
     if (invalidLength) {
-      message.error(" Câu trả lời phải có độ dài từ 1 đến 100 ký tự!");
+      message.error(" Câu trả lời phải có độ dài từ 3 đến 100 ký tự!");
       return;
     }
 
@@ -115,7 +121,18 @@ export const TestModal = ({
       return;
     }
 
-    onSave(question.trim(), trimmedAnswers);
+    const questionData: QuestionType = {
+      idQuestions: questionIdEdit,
+      content: question.trim(),
+      answers: trimmedAnswers.map((a, i) => ({
+        answer: a,
+        ...(correctIndex !== null && i === correctIndex
+          ? { isCorrected: true }
+          : {}),
+      })),
+    };
+
+    onSave(questionData);
   };
 
   return (
@@ -160,14 +177,17 @@ export const TestModal = ({
             ))}
           </Space>
 
-          <Button className="mt-3" onClick={handleAddAnswer} block>
+          <Button
+            className="!my-3 !bg-[#6C757D] !text-white"
+            onClick={handleAddAnswer}
+          >
             Thêm câu trả lời
           </Button>
         </div>
 
         <div className="flex justify-end gap-2 mt-4">
           <Button onClick={onCancel}>Huỷ</Button>
-          <Button type="primary" onClick={() => handleSave}>
+          <Button type="primary" onClick={handleSave}>
             Lưu
           </Button>
         </div>

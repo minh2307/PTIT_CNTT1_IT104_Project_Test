@@ -1,14 +1,21 @@
 import { Button, Card, Modal } from "antd";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 type Prop = {
-  id: number;
+  questionLength: number;
+  setIsModalOpen: (v: boolean) => void;
+  isModalOpen: boolean;
+  correctCount: number;
+  testId: number;
 };
 
-export const QuizzModal = ({ id }: Prop) => {
+export const QuizzModal = ({
+  questionLength,
+  setIsModalOpen,
+  isModalOpen,
+  correctCount,
+}: Prop) => {
   const navigate = useNavigate();
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOk = () => {
     setIsModalOpen(false);
@@ -17,6 +24,8 @@ export const QuizzModal = ({ id }: Prop) => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+
+  const percent = Math.round((correctCount / questionLength) * 100);
 
   return (
     <>
@@ -38,27 +47,34 @@ export const QuizzModal = ({ id }: Prop) => {
               Bạn đã hoàn thành bài kiểm tra
             </p>
             <hr />
-            <h2 className="text-center !mt-3 text-[15px]">Điểm của bạn: 85%</h2>
+            <h2 className="text-center !mt-3 text-[15px]">
+              Điểm của bạn: {percent}%
+            </h2>
           </Card>
           <Card className="!mb-4 !pb-4" bodyStyle={{ padding: 0 }}>
             <div className="border-b-1 !pt-4 bg-[#21252908]">
               <h2 className="text-2xl  text-center">Kết quả cụ thể</h2>
             </div>
             <div className="text-[15px]">
-              <p className="text-center">
-                <span className="font-bold">Tổng số câu hỏi:</span> 20
+              <p className="text-center !mt-2">
+                <span className="font-bold">Tổng số câu hỏi:</span>{" "}
+                {questionLength}
               </p>
               <p className="text-center">
-                <span className="font-bold">Câu trả lời đúng:</span> 17
+                <span className="font-bold">Câu trả lời đúng:</span>{" "}
+                {correctCount}
               </p>
               <p className="text-center">
-                <span className="font-bold">Câu trả lời sai:</span> 3
+                <span className="font-bold">Câu trả lời sai:</span>{" "}
+                {questionLength - correctCount}
               </p>
             </div>
           </Card>
         </div>
         <div className="flex justify-end gap-4 my-5">
-          <Button type="primary">Làm lại</Button>
+          <Button type="primary" onClick={() => window.location.reload()}>
+            Làm lại
+          </Button>
           <Button
             className="!text-white !bg-[#198754]"
             onClick={() => navigate("/")}

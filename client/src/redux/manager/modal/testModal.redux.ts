@@ -9,6 +9,9 @@ import {
   editTest,
   deleteTest,
   deleteQuestionTest,
+  updateQuestionTest,
+  addQuestionTest,
+  updatePlayAmount,
 } from "../../../apis/test.api";
 
 const initialState: InitialStateType = {
@@ -131,6 +134,62 @@ const testModalSlice = createSlice({
         }
       })
       .addCase(deleteQuestionTest.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || "Failed to delete question";
+      })
+      // update question
+      .addCase(updateQuestionTest.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(updateQuestionTest.fulfilled, (state, action) => {
+        const { id, question } = action.payload;
+
+        const test = state?.tests?.find((t) => t.id === id);
+        if (!test || !test.questions) return;
+
+        // Cập nhật câu hỏi trong danh sách
+        test.questions = test.questions.map((q) =>
+          q.idQuestions === question.idQuestions ? question : q
+        );
+      })
+      .addCase(updateQuestionTest.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || "Failed to delete question";
+      })
+      // add question
+      .addCase(addQuestionTest.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(addQuestionTest.fulfilled, (state, action) => {
+        const { id, newQuestion } = action.payload;
+        const test = state?.tests?.find((t) => t.id === id);
+        if (test) {
+          if (!test.questions) test.questions = [];
+          test.questions.push(newQuestion);
+        }
+      })
+      .addCase(addQuestionTest.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || "Failed to delete question";
+      })
+      // update PlayAmount
+      .addCase(updatePlayAmount.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      });
+    builder
+      .addCase(updatePlayAmount.fulfilled, (state, action) => {
+        const updatedTest = action.payload;
+        if (state.tests && Array.isArray(state.tests)) {
+          const index = state.tests.findIndex((t) => t.id === updatedTest.id);
+          if (index !== -1) {
+            state.tests[index] = updatedTest;
+          }
+        }
+      })
+      .addCase(updatePlayAmount.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message || "Failed to delete question";
       });

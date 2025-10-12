@@ -8,6 +8,9 @@ type Props = {
   data: QuestionType[];
   time: number;
   length: number;
+  onSelectAnswer: (questionIndex: number, answerIndex: number) => void;
+  userAnswers?: Record<number, number | null>;
+  onFinishTest: () => void;
 };
 
 export const TestContent = ({
@@ -16,31 +19,40 @@ export const TestContent = ({
   time,
   setCurrentQuestion,
   length,
+  onSelectAnswer,
+  userAnswers = {},
+  onFinishTest,
 }: Props) => {
-  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const questionIndex = currentQuestion - 1;
+  const question = data[questionIndex];
 
-  const question = data.find((e) => e.idQuestions === currentQuestion);
+  // lưu đáp án được chọn trong câu hiện tại
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(
+    userAnswers[questionIndex] ?? null
+  );
 
-  const handleAnswerChange = (e) => {
-    setSelectedAnswer(e.target.value);
+  // Cập nhật lại khi đổi câu
+  useEffect(() => {
+    setSelectedAnswer(userAnswers[questionIndex] ?? null);
+    console.log(userAnswers);
+  }, [currentQuestion, userAnswers, questionIndex]);
+
+  const handleAnswerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const answerIndex = Number(e.target.value);
+    setSelectedAnswer(answerIndex);
+    onSelectAnswer(questionIndex, answerIndex);
   };
 
+  //  Điều hướng câu hỏi
   const handleCurrentQuestion = (mode: "next" | "prev") => {
-    if (!length) return;
-
-    if (mode === "next") {
-      if (currentQuestion < length) {
-        setCurrentQuestion(currentQuestion + 1);
-      }
-    } else {
-      if (currentQuestion > 1) {
-        setCurrentQuestion(currentQuestion - 1);
-      }
+    if (mode === "next" && currentQuestion < length) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else if (mode === "prev" && currentQuestion > 1) {
+      setCurrentQuestion(currentQuestion - 1);
     }
   };
 
-  // time
-
+  // ✅ Đếm giờ
   const [timeLeft, setTimeLeft] = useState(() => {
     const saved = localStorage.getItem("timeLeft");
     return saved ? Number(saved) : time * 60;
@@ -72,38 +84,45 @@ export const TestContent = ({
 
   return (
     <div className="flex-1">
-      <div className="bg-white shadow-sm  h-full">
+      <div className="bg-white shadow-sm h-full">
         <div className="px-6 py-4 flex justify-between">
           <h2 className="!text-3xl font-bold text-gray-900 !mt-6">
             {question?.content}
           </h2>
           <div className="flex flex-col gap-3 text-sm text-gray-600">
-            <span>Thời gian: {time}</span>
+            <span>Thời gian: {time} phút</span>
             <span>
               Còn lại: {minutes.toString().padStart(2, "0")}:
-              {seconds.toString().padStart(2, "0")} phút
+              {seconds.toString().padStart(2, "0")}
             </span>
           </div>
         </div>
 
         <div className="px-6 py-6">
           <h3 className="text-xl mb-3 text-gray-900">
-            Câu hỏi {currentQuestion} trên {length}:
+            Câu hỏi {currentQuestion}/{length}:
           </h3>
-          <p className="mb-5 text-gray-800 text-sm">{question?.content}</p>
 
-          <Radio.Group onChange={handleAnswerChange} value={selectedAnswer}>
+          <Radio.Group
+            onChange={handleAnswerChange}
+            value={selectedAnswer ?? undefined}
+          >
             <Space direction="vertical" className="w-full">
-              {question?.answers?.map((e) => (
-                <Radio value={e.answer} className="text-sm">
-                  {e.answer}
+              {question?.answers?.map((ans, index) => (
+                <Radio key={index} value={index} className="text-sm">
+                  {ans.answer}
                 </Radio>
               ))}
             </Space>
           </Radio.Group>
 
           <div className="flex justify-between items-center mt-8 pt-6">
-            <Button type="primary" className="!bg-[#198754]" size="middle">
+            <Button
+              type="primary"
+              className="!bg-[#198754]"
+              size="middle"
+              onClick={onFinishTest}
+            >
               Hoàn thành
             </Button>
             <Space>

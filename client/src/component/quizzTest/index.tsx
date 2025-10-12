@@ -10,6 +10,12 @@ import { getAllTests } from "../../apis/test.api";
 
 const QuizTestPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [userAnswers, setUserAnswers] = useState<Record<number, number | null>>(
+    {}
+  );
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [correctCount, setCorrectCount] = useState(0);
+
   const { id } = useParams();
   const [currentQuestion, setCurrentQuestion] = useState<number>(1);
   const dispatch = useAppDispatch();
@@ -23,6 +29,32 @@ const QuizTestPage = () => {
 
   const questionLeng = data?.questions?.length ?? 0;
 
+  const handleSelectAnswer = (questionIndex: number, answerIndex: number) => {
+    setUserAnswers((prev) => ({
+      ...prev,
+      [questionIndex]: answerIndex,
+    }));
+  };
+
+  //check kết quả question
+  const handleFinishTest = () => {
+    if (!data?.questions?.length) return;
+
+    let correct = 0;
+
+    data.questions.forEach((q, i) => {
+      const userChoice = userAnswers[i];
+      const correctIndex = q.answers?.findIndex((a) => a.isCorrected);
+
+      if (userChoice != null && correctIndex === userChoice) {
+        correct++;
+      }
+    });
+
+    setCorrectCount(correct);
+    setIsModalOpen(true);
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-[#e9ecef]">
       <Nav onChangeSearch={setSearchTerm} />
@@ -33,6 +65,7 @@ const QuizTestPage = () => {
               length={questionLeng}
               currentQuestion={currentQuestion}
               setCurrentQuestion={setCurrentQuestion}
+              userAnswers={userAnswers}
             ></Sidebar>
             <TestContent
               setCurrentQuestion={setCurrentQuestion}
@@ -40,11 +73,19 @@ const QuizTestPage = () => {
               data={data?.questions ?? []}
               time={data?.playTime ?? 0}
               length={questionLeng}
+              onSelectAnswer={handleSelectAnswer}
+              userAnswers={userAnswers}
+              onFinishTest={handleFinishTest}
             ></TestContent>
           </div>
         </div>
       </div>
-      <QuizzModal id={Number(id)}></QuizzModal>
+      <QuizzModal
+        questionLength={questionLeng}
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+        correctCount={correctCount}
+      ></QuizzModal>
       <FooterTest></FooterTest>
     </div>
   );

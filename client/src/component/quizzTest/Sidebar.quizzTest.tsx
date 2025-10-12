@@ -4,12 +4,14 @@ type Props = {
   length: number;
   setCurrentQuestion: (id: number) => void;
   currentQuestion: number;
+  userAnswers: Record<number, number | null>;
 };
 
 export const Sidebar = ({
   length,
   currentQuestion,
   setCurrentQuestion,
+  userAnswers,
 }: Props) => {
   const questions = Array.from({ length }, (_, i) => i + 1);
 
@@ -21,7 +23,7 @@ export const Sidebar = ({
         <div className="grid grid-cols-4 gap-2 mb-4">
           {questions.map((num) => {
             const isCurrent = num === currentQuestion;
-            const isAnswered = num === 11;
+            const isAnswered = userAnswers[num - 1] != null;
 
             return (
               <Button

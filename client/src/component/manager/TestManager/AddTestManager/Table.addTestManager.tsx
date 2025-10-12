@@ -87,7 +87,8 @@ export const FormTable = ({
       pagination={false}
       className="my-5"
       locale={{
-        emptyText: "Chưa có câu hỏi nào. Vui lòng thêm câu hỏi.",
+        emptyText:
+          "Bài test bắt buộc phải có một câu hỏi. Vui lòng thêm câu hỏi.",
       }}
     />
   );
