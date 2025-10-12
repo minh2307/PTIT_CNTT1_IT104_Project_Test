@@ -6,7 +6,6 @@ type Prop = {
   setIsModalOpen: (v: boolean) => void;
   isModalOpen: boolean;
   correctCount: number;
-  testId: number;
 };
 
 export const QuizzModal = ({

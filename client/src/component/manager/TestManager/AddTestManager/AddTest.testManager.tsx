@@ -1,4 +1,4 @@
-import { Button, Form, Input, Select, type FormProps } from "antd";
+import { Button, Form, Input, message, Select, type FormProps } from "antd";
 import type { TestType } from "../../../../interface/test.interface";
 import { FormTable } from "./Table.addTestManager";
 import { useEffect, useState } from "react";
@@ -28,7 +28,7 @@ export const AddTest = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    setTestId(testId);
+    setTestId(Number(id));
   }, []);
 
   const { tests } = useAppSelector((state) => state.testModal);
@@ -56,11 +56,10 @@ export const AddTest = () => {
       );
 
       if (!isChanged) {
-        console.log("Không có thay đổi");
+        message.info("Không có thay đổi");
         return;
       }
 
-      console.log("edit", values);
       dispatch(
         editTest({
           id: testId,
@@ -70,7 +69,6 @@ export const AddTest = () => {
         })
       );
     } else {
-      console.log("add", values);
       const payload = {
         ...values,
         playTime: Number(values.playTime),
@@ -78,16 +76,13 @@ export const AddTest = () => {
         categoryId: Number(values.categoryId),
       };
 
-      console.log("add", payload);
       const res = await dispatch(addTest(payload)).unwrap();
 
       if (res?.id) {
-        console.log("Tạo test thành công, id:", res.id);
+        message.success("Tạo test thành công");
         setTestId(res.id);
       }
     }
-
-    console.log("Success:", values);
   };
 
   const onFinishFailed: FormProps<TestType>["onFinishFailed"] = (errorInfo) => {

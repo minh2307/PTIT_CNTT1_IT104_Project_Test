@@ -9,51 +9,56 @@ import {
 } from "antd";
 import type { UserForm } from "../interface/user.interface";
 import { Link, useNavigate } from "react-router-dom";
-import { createContext, useMemo } from "react";
+import { createContext, useEffect, useMemo } from "react";
+import { fetchUsers } from "../apis/user.api";
+import { useAppDispatch, useAppSelector } from "../hooks/redux.hook";
 
 const Login = () => {
   const [form] = Form.useForm<UserForm>();
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
-  const raw = localStorage.getItem("users") || "[]";
-  const users: UserForm[] = JSON.parse(raw);
+  const { list: users, loading } = useAppSelector((state) => state.userSlice);
 
   console.log(users);
 
-  type NotificationPlacement = NotificationArgsProps["placement"];
-
-  const Context = createContext({ name: "Default" });
+  // Gọi API lấy user khi load trang
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
 
   const [api, contextHolder] = notification.useNotification();
+  const Context = createContext({ name: "" });
+  const contextValue = useMemo(() => ({ name: "" }), []);
 
-  const openNotification = (placement: NotificationPlacement) => {
-    api.info({
-      message: `Dăng nhập thành công!`,
-      description: (
-        <Context.Consumer>{({ name }) => `Hello, ${name}!`}</Context.Consumer>
-      ),
+  const openNotification = (placement: NotificationArgsProps["placement"]) => {
+    api.success({
+      message: "Đăng nhập thành công!",
       placement,
     });
   };
 
-  const contextValue = useMemo(() => ({ name: "" }), []);
-
   const onFinish: FormProps<UserForm>["onFinish"] = (values) => {
-    const { email } = values;
-    const user = users.find((u) => u.email === email);
+    const { email, password } = values;
+    const user = users.find(
+      (u) => u.email === email && u.password === password
+    );
+
     if (!user) {
-      console.log("Thông tin đăng nhập không hợp lệ");
+      api.error({
+        message: "Thông tin đăng nhập không hợp lệ!",
+        placement: "topRight",
+      });
       return;
     }
-    localStorage.setItem("currentUser", JSON.stringify(user));
 
-    console.log("Đăng nhập thành công");
+    // lưu tạm user đăng nhập
+    localStorage.setItem("currentUser", JSON.stringify(user));
 
     openNotification("topRight");
 
     setTimeout(() => {
-      if (user.role === "admin") navigate("/manager/category");
-      else navigate("/");
+      navigate(user.role === "admin" ? "/manager/category" : "/");
     }, 600);
   };
 
@@ -65,21 +70,21 @@ const Login = () => {
     <Context.Provider value={contextValue}>
       {contextHolder}
       <div className="flex justify-center items-center min-h-screen flex-col">
-        <h1 className="w-[100%] text-center text-4xl font-bold ">Đăng Nhập</h1>
+        <h1 className="w-[100%] text-center text-4xl font-bold">Đăng Nhập</h1>
         <div className="w-[36%]">
           <div className="text-[#52525B] mt-5 mb-5 text-center text-[12px]">
             QuizForge – Nền tảng sáng tạo bài kiểm tra trực tuyến, giúp bạn dễ
             dàng thiết kế, chia sẻ và thực hiện các bài kiểm tra một cách nhanh
-            chóng và hiệu quả!{" "}
+            chóng và hiệu quả!
           </div>
           <Card>
             <Form
               form={form}
-              name="basic"
+              name="login"
+              layout="vertical"
               onFinish={onFinish}
               onFinishFailed={onFinishFailed}
               autoComplete="off"
-              layout="vertical"
               requiredMark={false}
               validateTrigger="onSubmit"
             >
@@ -93,7 +98,9 @@ const Login = () => {
                       if (!value) return Promise.resolve();
                       const u = users.find((x) => x.email === value);
                       if (!u)
-                        return Promise.reject(new Error("Email không tồn tại"));
+                        return Promise.reject(
+                          new Error("Email không tồn tại trong hệ thống")
+                        );
                       return Promise.resolve();
                     },
                   },
@@ -101,48 +108,39 @@ const Login = () => {
               >
                 <Input
                   size="large"
-                  className="placeholder:text-center"
                   placeholder="Địa chỉ Email"
+                  disabled={loading}
                 />
               </Form.Item>
 
               <Form.Item<UserForm>
-                label="Password"
+                label="Mật khẩu"
                 name="password"
                 rules={[
                   { required: true, message: "Mật khẩu không được để trống" },
-                  ({ getFieldValue }) => ({
-                    validator(_, value) {
-                      const email = getFieldValue("email");
-                      const u = users.find((x) => x.email === email);
-
-                      if (!u || u.password !== value)
-                        return Promise.reject(new Error("Mật khẩu không đúng"));
-                      return Promise.resolve();
-                    },
-                  }),
                 ]}
               >
                 <Input.Password
                   size="large"
-                  className="[&>input]:placeholder:text-center"
                   placeholder="Mật khẩu"
+                  disabled={loading}
                 />
               </Form.Item>
 
-              <Form.Item label={null}>
+              <Form.Item>
                 <Button
                   type="primary"
                   htmlType="submit"
-                  className="w-[100%]"
+                  className="w-full"
                   size="large"
+                  loading={loading}
                 >
                   Đăng Nhập
                 </Button>
               </Form.Item>
+
               <div className="text-center">
-                <span>Chưa có tài khoản?</span>
-                &nbsp;
+                <span>Chưa có tài khoản?</span>&nbsp;
                 <Link to="/register">Đăng ký</Link>
               </div>
             </Form>
