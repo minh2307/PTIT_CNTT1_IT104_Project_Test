@@ -10,6 +10,8 @@ type Prop = {
   handleModal: () => void;
   isModalDelete: (c: boolean) => void;
   questionIdDelete: (n: number) => void;
+  setQuestionIdEdit: (n: number) => void;
+  setModeModal: (str: "add" | "edit") => void;
 };
 
 export const FormTable = ({
@@ -17,6 +19,8 @@ export const FormTable = ({
   handleModal,
   isModalDelete,
   questionIdDelete,
+  setQuestionIdEdit,
+  setModeModal,
 }: Prop) => {
   const rows = useMemo(() => {
     if (!data?.[0]?.questions) return [];
@@ -56,7 +60,8 @@ export const FormTable = ({
             className="!bg-[#FFC107]"
             onClick={() => {
               handleModal();
-              console.log("Sửa:", record);
+              setModeModal("edit");
+              setQuestionIdEdit(record.idQuestions ?? 0);
             }}
           >
             Sửa
@@ -64,7 +69,6 @@ export const FormTable = ({
           <Button
             className="!bg-[#DC3545] !text-white"
             onClick={() => {
-              console.log("Xoá:", record);
               questionIdDelete(record.idQuestions ?? 0);
               isModalDelete(true);
             }}

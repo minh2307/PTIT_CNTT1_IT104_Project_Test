@@ -15,6 +15,14 @@ export const AddTest = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalDelete, setIsModalDelete] = useState(false);
   const [questionIdDelete, setQuestionIdDelete] = useState<number>(0);
+  const [questionIdEdit, setQuestionIdEdit] = useState<number>(0);
+  const [modeModal, setModeModal] = useState<"add" | "edit">("add");
+
+  const { id } = useParams();
+  const { tests } = useAppSelector((state) => state.testModal);
+  const { categorys } = useAppSelector((state) => state.categoryModal);
+
+  const data = tests?.filter((e) => e.id === Number(id));
 
   const handleModal = () => {
     setIsModalOpen(true);
@@ -61,16 +69,10 @@ export const AddTest = () => {
     console.log("Failed:", errorInfo);
   };
 
-  const { id } = useParams();
-  const { tests } = useAppSelector((state) => state.testModal);
-  const { categorys } = useAppSelector((state) => state.categoryModal);
-
   useEffect(() => {
     dispatch(getAllTests({}));
     dispatch(getAllCategorys());
   }, [dispatch]);
-
-  const data = tests?.filter((e) => e.id === Number(id));
 
   useEffect(() => {
     if (data && data.length > 0) {
@@ -96,7 +98,33 @@ export const AddTest = () => {
         <Form.Item<TestType>
           label="Tên bài test"
           name="testName"
-          rules={[{ required: true, message: "Vui lòng nhập tên bài test!" }]}
+          rules={[
+            { required: true, message: "Vui lòng nhập tên bài test!" },
+            {
+              min: 3,
+              message: "Tên bài test phải dài hơn 3 ký tự   ",
+            },
+            {
+              validator: (_, value) => {
+                if (!value) return Promise.resolve();
+
+                const isDuplicate = tests?.some(
+                  (t) =>
+                    t.id !== Number(id) &&
+                    t.testName?.trim().toLowerCase() ===
+                      value.trim().toLowerCase()
+                );
+
+                if (isDuplicate) {
+                  return Promise.reject(
+                    new Error("Tên bài test không được trùng nhau!")
+                  );
+                }
+
+                return Promise.resolve();
+              },
+            },
+          ]}
         >
           <Input placeholder="Điền tên bài test" />
         </Form.Item>
@@ -126,9 +154,19 @@ export const AddTest = () => {
                 pattern: /^[0-9]+$/,
                 message: "Chỉ được nhập số!",
               },
+              {
+                validator: (_, value) => {
+                  if (value && Number(value) > 120) {
+                    return Promise.reject(
+                      new Error("Bài test không được quá 120 phút!")
+                    );
+                  }
+                  return Promise.resolve();
+                },
+              },
             ]}
           >
-            <Input placeholder="15" style={{ width: 100 }} />
+            <Input placeholder="Time" style={{ width: 100 }} />
           </Form.Item>
         </div>
 
@@ -136,7 +174,13 @@ export const AddTest = () => {
         <div className="my-4">
           <h1 className="font-bold text-xl">Quản lý câu hỏi</h1>
           <div className="flex justify-between">
-            <Button type="primary" onClick={() => setIsModalOpen(true)}>
+            <Button
+              type="primary"
+              onClick={() => {
+                setIsModalOpen(true);
+                setModeModal("add");
+              }}
+            >
               Thêm Câu hỏi
             </Button>
             <Button type="default" htmlType="submit">
@@ -150,6 +194,8 @@ export const AddTest = () => {
         handleModal={handleModal}
         isModalDelete={setIsModalDelete}
         questionIdDelete={setQuestionIdDelete}
+        setQuestionIdEdit={setQuestionIdEdit}
+        setModeModal={setModeModal}
       ></FormTable>
       <TestModal
         open={isModalOpen}
@@ -159,6 +205,9 @@ export const AddTest = () => {
           console.log("Các đáp án:", answers);
           setIsModalOpen(false);
         }}
+        editData={data?.[0]?.questions ?? []}
+        questionIdEdit={questionIdEdit}
+        modeModal={modeModal}
       />
 
       <ModalDelete

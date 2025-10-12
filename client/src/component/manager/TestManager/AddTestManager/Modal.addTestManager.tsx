@@ -1,17 +1,68 @@
-import { useState } from "react";
-import { Modal, Input, Button, Space, Checkbox } from "antd";
+import { useEffect, useState } from "react";
+import { Modal, Input, Button, Space, Checkbox, message } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
+import type {
+  AnswersType,
+  QuestionType,
+} from "../../../../interface/test.interface";
 
 type Props = {
   open: boolean;
   onCancel: () => void;
   onSave: (question: string, answers: string[]) => void;
+  editData?: QuestionType[];
+  questionIdEdit: number;
+  modeModal: "add" | "edit";
 };
 
-export const TestModal = ({ open, onCancel, onSave }: Props) => {
+export const TestModal = ({
+  open,
+  onCancel,
+  onSave,
+  editData,
+  questionIdEdit,
+  modeModal,
+}: Props) => {
   const [question, setQuestion] = useState("");
   const [answers, setAnswers] = useState(["", "", "", ""]);
   const [correctIndex, setCorrectIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (editData && open && modeModal === "edit") {
+      const index = editData.findIndex((e) => e.idQuestions === questionIdEdit);
+
+      const questionData = Array.isArray(editData) ? editData[index] : editData;
+
+      if (!questionData) {
+        resetForm();
+        return;
+      }
+
+      setQuestion(questionData.content ?? "");
+
+      const answerTexts =
+        questionData.answers?.map((a: AnswersType) => a.answer) || [];
+
+      while (answerTexts.length < 2) {
+        answerTexts.push("");
+      }
+
+      setAnswers(answerTexts as string[]);
+
+      const correctIdx =
+        questionData.answers?.findIndex((a: AnswersType) => a.isCorrected) ??
+        -1;
+      setCorrectIndex(correctIdx >= 0 ? correctIdx : null);
+    } else {
+      resetForm();
+    }
+  }, [editData, open, questionIdEdit]);
+
+  const resetForm = () => {
+    setQuestion("");
+    setAnswers(["", "", "", ""]);
+    setCorrectIndex(null);
+  };
 
   const handleSelectCorrect = (index: number) => {
     setCorrectIndex(index);
@@ -29,7 +80,42 @@ export const TestModal = ({ open, onCancel, onSave }: Props) => {
 
   const handleDeleteAnswer = (index: number) => {
     setAnswers(answers.filter((_, i) => i !== index));
-    if (correctIndex === index) setCorrectIndex(null);
+    if (correctIndex !== null && correctIndex > index) {
+      setCorrectIndex(correctIndex - 1);
+    }
+  };
+
+  const handleSave = () => {
+    if (!question.trim()) {
+      message.error(" Câu hỏi không được để trống!");
+      return;
+    }
+
+    if (question.trim().length < 5 || question.trim().length > 200) {
+      message.error(" Câu hỏi phải có độ dài từ 5 đến 200 ký tự!");
+      return;
+    }
+
+    const trimmedAnswers = answers.map((a) => a.trim());
+    if (trimmedAnswers.some((a) => !a)) {
+      message.error(" Tất cả câu trả lời đều phải được điền!");
+      return;
+    }
+
+    const invalidLength = trimmedAnswers.some(
+      (a) => a.length < 1 || a.length > 100
+    );
+    if (invalidLength) {
+      message.error(" Câu trả lời phải có độ dài từ 1 đến 100 ký tự!");
+      return;
+    }
+
+    if (correctIndex === null) {
+      message.error("Vui lòng chọn 1 câu trả lời đúng!");
+      return;
+    }
+
+    onSave(question.trim(), trimmedAnswers);
   };
 
   return (
@@ -81,7 +167,7 @@ export const TestModal = ({ open, onCancel, onSave }: Props) => {
 
         <div className="flex justify-end gap-2 mt-4">
           <Button onClick={onCancel}>Huỷ</Button>
-          <Button type="primary" onClick={() => onSave(question, answers)}>
+          <Button type="primary" onClick={() => handleSave}>
             Lưu
           </Button>
         </div>

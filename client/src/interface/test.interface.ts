@@ -1,7 +1,12 @@
+export interface AnswersType {
+  answer?: string;
+  isCorrected?: boolean;
+}
+
 export interface QuestionType {
   idQuestions?: number;
   content?: string;
-  answers?: { answer?: string; isCorrected?: boolean }[];
+  answers?: AnswersType[];
 }
 
 export interface TestType {
