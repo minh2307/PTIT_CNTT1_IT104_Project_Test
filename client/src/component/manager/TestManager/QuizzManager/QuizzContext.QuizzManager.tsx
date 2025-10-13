@@ -1,6 +1,6 @@
 import { Button, Form, Input, message, Select, type FormProps } from "antd";
 import type { TestType } from "../../../../interface/test.interface";
-import { FormTable } from "./Table.addTestManager";
+import { FormTable } from "./Table.QuizzManager";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../../hooks/redux.hook";
@@ -12,10 +12,10 @@ import {
   updateQuestionTest,
 } from "../../../../apis/test.api";
 import { getAllCategorys } from "../../../../apis/category.api";
-import { TestModal } from "./Modal.addTestManager";
-import { ModalDelete } from "./ModalDelete.addTestManger";
+import { TestModal } from "./Modal.QuizzManager";
+import { ModalDelete } from "./ModalDelete.QuizzManager";
 
-export const AddTest = () => {
+export const QuizzContext = () => {
   const dispatch = useAppDispatch();
   const [form] = Form.useForm();
   const [isModalOpen, setIsModalOpen] = useState(false);

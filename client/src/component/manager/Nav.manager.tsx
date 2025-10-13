@@ -5,9 +5,7 @@ export const Nav = () => {
   const navigate = useNavigate();
 
   const navLinkCls = ({ isActive }: { isActive: boolean }) =>
-    isActive
-      ? "text-[#FFFFFF8C] hover:font-bold hover:text-white"
-      : "text-white";
+    isActive ? "text-[#FFFFFF8C]" : "text-white hover:font-bold";
 
   const logOut = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -17,7 +15,7 @@ export const Nav = () => {
       okText: "Đăng xuất",
       cancelText: "Hủy",
       onOk() {
-        localStorage.removeItem("currentUser");
+        localStorage.clear();
         setTimeout(() => {
           navigate("/login");
         }, 300);

@@ -71,7 +71,13 @@ export const QuizzModal = ({
           </Card>
         </div>
         <div className="flex justify-end gap-4 my-5">
-          <Button type="primary" onClick={() => window.location.reload()}>
+          <Button
+            type="primary"
+            onClick={() => {
+              localStorage.removeItem("timeLeft");
+              window.location.reload();
+            }}
+          >
             Làm lại
           </Button>
           <Button

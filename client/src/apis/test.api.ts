@@ -25,7 +25,7 @@ export const getAllTests = createAsyncThunk(
       query["_order"] = sortDir ?? "asc";
     }
     if (search) {
-      query["q"] = search.trim();
+      query["testName_like"] = search.trim();
     }
 
     const res = await baseApi.get("/tests", { params: query });

@@ -29,6 +29,12 @@ const QuizTestPage = () => {
 
   const questionLeng = data?.questions?.length ?? 0;
 
+  useEffect(() => {
+    if (data?.playTime != null) {
+      localStorage.setItem("time", data.playTime.toString());
+    }
+  }, [data]);
+
   const handleSelectAnswer = (questionIndex: number, answerIndex: number) => {
     setUserAnswers((prev) => ({
       ...prev,

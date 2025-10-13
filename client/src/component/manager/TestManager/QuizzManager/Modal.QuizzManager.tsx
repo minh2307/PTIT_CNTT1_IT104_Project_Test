@@ -137,7 +137,7 @@ export const TestModal = ({
 
   return (
     <Modal
-      title="Thêm/sửa câu hỏi"
+      title={modeModal === "edit" ? "Sửa câu hỏi" : "Thêm câu hỏi"}
       open={open}
       onCancel={onCancel}
       footer={null}

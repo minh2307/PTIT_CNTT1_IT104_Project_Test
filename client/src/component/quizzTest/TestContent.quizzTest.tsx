@@ -55,7 +55,15 @@ export const TestContent = ({
   // Đếm giờ
   const [timeLeft, setTimeLeft] = useState(() => {
     const saved = localStorage.getItem("timeLeft");
-    return saved ? Number(saved) : time * 60;
+    if (saved && !isNaN(Number(saved))) {
+      return Number(saved);
+    }
+
+    const timeStart = localStorage.getItem("time");
+    console.log("timeStart", timeStart);
+
+    const start = timeStart ? Number(timeStart) : 0;
+    return !isNaN(start) ? start * 60 : 0;
   });
 
   useEffect(() => {

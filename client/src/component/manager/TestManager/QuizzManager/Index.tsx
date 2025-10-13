@@ -1,6 +1,6 @@
 import { FooterTest } from "../../Footer.manager";
 import { Nav } from "../../Nav.manager";
-import { AddTest } from "./AddTest.testManager";
+import { QuizzContext } from "./QuizzContext.QuizzManager";
 
 const Index = () => {
   return (
@@ -9,7 +9,7 @@ const Index = () => {
         <Nav></Nav>
         <div className="mx-[10%] flex-1 py-4">
           <h1 className="font-bold text-3xl ">Tạo bài test</h1>
-          <AddTest></AddTest>
+          <QuizzContext></QuizzContext>
         </div>
 
         <FooterTest></FooterTest>

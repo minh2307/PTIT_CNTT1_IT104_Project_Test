@@ -16,7 +16,7 @@ export const Nav = ({ onChangeSearch }: Prop) => {
       okText: "Đăng xuất",
       cancelText: "Hủy",
       onOk() {
-        localStorage.removeItem("currentUser");
+        localStorage.clear();
         setTimeout(() => {
           navigate("/login");
         }, 300);
