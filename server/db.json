@@ -19,6 +19,26 @@
       "id": 4,
       "categoryName": "Đời sống",
       "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711191/life_mfrvlx.png"
+    },
+    {
+      "id": 1,
+      "categoryName": "Lịch sử",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711184/history_pupic4.png"
+    },
+    {
+      "id": 2,
+      "categoryName": "Khoa học",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711199/science_dlkedc.png"
+    },
+    {
+      "id": 3,
+      "categoryName": "Giải trí",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711111/entertainment_pzrota.png"
+    },
+    {
+      "id": 4,
+      "categoryName": "Đời sống",
+      "categoryImg": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711191/life_mfrvlx.png"
     }
   ],
   "users": [

@@ -1,19 +1,25 @@
 import { Button, Space, Table, type TableProps } from "antd";
-import TestPaination from "./Paination.testManager";
 import type { TestType } from "../../../interface/test.interface";
 
-import { openDelete } from "../../../redux/manager/modal/testModal.redux";
+import {
+  openDelete,
+  setPagination,
+} from "../../../redux/manager/modal/testModal.redux";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hook";
 import { useEffect, useMemo } from "react";
 import { getAllCategorys } from "../../../apis/category.api";
 import type { CategoryType } from "../../../interface/category.interface";
 import { useNavigate } from "react-router-dom";
+import Paination from "../../Paination";
+import { getAllTests } from "../../../apis/test.api";
 
 type Props = {
   data: TestType[] | undefined;
+  testPage: number;
+  testTotal: number;
 };
 
-export const TableTest = ({ data }: Props) => {
+export const TableTest = ({ data, testPage, testTotal }: Props) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -119,6 +125,14 @@ export const TableTest = ({ data }: Props) => {
     },
   ];
 
+  // phân trang
+  const PAGE_SIZE = 8;
+
+  const handlePageChange = (newPage: number) => {
+    dispatch(setPagination({ page: newPage }));
+    dispatch(getAllTests({ page: newPage, limit: PAGE_SIZE }));
+  };
+
   return (
     <div>
       <Table<TestType>
@@ -127,7 +141,12 @@ export const TableTest = ({ data }: Props) => {
         pagination={false}
         className="my-5"
       />
-      <TestPaination></TestPaination>
+      <Paination
+        PAGE_SIZE={PAGE_SIZE}
+        handlePageChange={handlePageChange}
+        page={testPage}
+        total={testTotal}
+      ></Paination>
     </div>
   );
 };

@@ -10,10 +10,11 @@ import { useEffect, useMemo, useState } from "react";
 import { getAllTests } from "../../apis/test.api";
 import type { CategoryType } from "../../interface/category.interface";
 import { getAllCategorys } from "../../apis/category.api";
-import HomePaination from "./Pagination.home";
 import { useDebounce } from "../../hooks/Debounce.hook";
 import { Toolbar } from "./Tooldbar.home";
 import { useNavigate } from "react-router-dom";
+import Paination from "../Paination";
+import { setPagination } from "../../redux/manager/modal/testModal.redux";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -58,6 +59,15 @@ const Index = () => {
     );
     dispatch(getAllCategorys());
   }, [dispatch, pagTest, debouncedSearch, sortDir]);
+
+  // phân trang
+
+  const PAGE_SIZE = 8;
+
+  const handlePageChange = (newPage: number) => {
+    dispatch(setPagination({ page: newPage }));
+    dispatch(getAllTests({ page: newPage, limit: PAGE_SIZE }));
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -112,7 +122,12 @@ const Index = () => {
             </div>
           </div>
         </div>
-        <HomePaination></HomePaination>
+        <Paination
+          PAGE_SIZE={PAGE_SIZE}
+          handlePageChange={handlePageChange}
+          page={pagTest ?? 0}
+          total={total ?? 0}
+        ></Paination>
       </div>
       <FooterTest></FooterTest>
     </div>

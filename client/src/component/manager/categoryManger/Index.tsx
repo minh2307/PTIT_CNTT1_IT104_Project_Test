@@ -27,7 +27,11 @@ const Index = () => {
       <div className="mx-[10%] flex-1 py-4">
         <h1 className="font-Roboto text-2xl py-3">Quản lý danh mục</h1>
         <CategoryTooldbar></CategoryTooldbar>
-        <CategoryTable data={storeCategory}></CategoryTable>
+        <CategoryTable
+          data={storeCategory}
+          categoryPage={page ?? 0}
+          categoryTotal={total ?? 0}
+        ></CategoryTable>
         <CategoryModal />
       </div>
       <FooterTest></FooterTest>

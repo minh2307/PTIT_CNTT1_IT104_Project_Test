@@ -1,19 +1,23 @@
 import { Button, Space, Table } from "antd";
 import type { TableProps } from "antd";
 import type { CategoryType } from "../../../interface/category.interface";
-import CategoryPagination from "./Pagination.categoryManager";
 
 import { useAppDispatch } from "../../../hooks/redux.hook";
 import {
   openDelete,
   openEdit,
+  setPagination,
 } from "../../../redux/manager/modal/categoryModal.redux";
+import Paination from "../../Paination";
+import { getAllCategorys } from "../../../apis/category.api";
 
 type Props = {
   data: CategoryType[] | undefined;
+  categoryPage: number;
+  categoryTotal: number;
 };
 
-export const CategoryTable = ({ data }: Props) => {
+export const CategoryTable = ({ data, categoryPage, categoryTotal }: Props) => {
   const dispatch = useAppDispatch();
 
   const columns: TableProps<CategoryType>["columns"] = [
@@ -69,6 +73,15 @@ export const CategoryTable = ({ data }: Props) => {
     },
   ];
 
+  // phân trang
+
+  const PAGE_SIZE = 6;
+
+  const handlePageChange = (newPage: number) => {
+    dispatch(setPagination({ page: newPage }));
+    dispatch(getAllCategorys({ page: newPage, limit: PAGE_SIZE }));
+  };
+
   return (
     <>
       <Table<CategoryType>
@@ -77,7 +90,12 @@ export const CategoryTable = ({ data }: Props) => {
         pagination={false}
         className="my-5"
       />
-      <CategoryPagination></CategoryPagination>
+      <Paination
+        PAGE_SIZE={PAGE_SIZE}
+        handlePageChange={handlePageChange}
+        page={categoryPage}
+        total={categoryTotal}
+      ></Paination>
     </>
   );
 };

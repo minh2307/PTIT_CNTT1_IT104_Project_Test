@@ -13,7 +13,11 @@ import { useNavigate } from "react-router-dom";
 const Index = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { tests: storeTest, page } = useAppSelector((state) => state.testModal);
+  const {
+    tests: storeTest,
+    page,
+    total,
+  } = useAppSelector((state) => state.testModal);
   const [sortBy, setSortBy] = useState<"time" | "name">("time");
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
   const [search, setSearch] = useState<string>("");
@@ -78,7 +82,11 @@ const Index = () => {
             ></Input>
           </div>
         </div>
-        <TableTest data={storeTest}></TableTest>
+        <TableTest
+          data={storeTest}
+          testPage={page ?? 0}
+          testTotal={total ?? 0}
+        ></TableTest>
         <ModalAddEdit />
       </div>
       <FooterTest></FooterTest>

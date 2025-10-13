@@ -12,7 +12,7 @@ const CategoryManager = lazy(
 );
 const Test = lazy(() => import("../component/manager/TestManager/Index"));
 const TestFormPage = lazy(
-  () => import("../component/manager/TestManager/AddTestManager/Index")
+  () => import("../component/manager/TestManager/QuizzManager/Index")
 );
 const Quizz = lazy(() => import("../component/quizzTest/index"));
 
