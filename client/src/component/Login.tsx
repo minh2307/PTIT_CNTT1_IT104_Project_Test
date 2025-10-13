@@ -22,7 +22,6 @@ const Login = () => {
 
   console.log(users);
 
-  // Gọi API lấy user khi load trang
   useEffect(() => {
     dispatch(fetchUsers());
   }, [dispatch]);
@@ -44,21 +43,13 @@ const Login = () => {
       (u) => u.email === email && u.password === password
     );
 
-    if (!user) {
-      api.error({
-        message: "Thông tin đăng nhập không hợp lệ!",
-        placement: "topRight",
-      });
-      return;
-    }
-
     // lưu tạm user đăng nhập
     localStorage.setItem("currentUser", JSON.stringify(user));
 
     openNotification("topRight");
 
     setTimeout(() => {
-      navigate(user.role === "admin" ? "/manager/category" : "/");
+      navigate(user?.role === "admin" ? "/manager/category" : "/");
     }, 600);
   };
 

@@ -1,6 +1,5 @@
 import { LoadingOutlined } from "@ant-design/icons";
-import { Flex, Spin } from "antd";
-
+import { Spin } from "antd";
 import React, {
   Suspense,
   type ComponentType,
@@ -13,9 +12,9 @@ interface LazyLoaderProps {
 
 export const LazyLoader: React.FC<LazyLoaderProps> = ({ element: Element }) => {
   const defaultFallback = (
-    <Flex align="center" gap="middle">
-      <Spin indicator={<LoadingOutlined spin />} size="large" />
-    </Flex>
+    <div className="flex items-center justify-center h-screen w-full">
+      <Spin indicator={<LoadingOutlined style={{ fontSize: 48 }} spin />} />
+    </div>
   );
 
   return (

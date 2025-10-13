@@ -167,7 +167,7 @@ const testModalSlice = createSlice({
         const test = state?.tests?.find((t) => t.id === id);
         if (test) {
           if (!test.questions) test.questions = [];
-          test.questions.push(newQuestion);
+          test.questions.unshift(newQuestion);
         }
       })
       .addCase(addQuestionTest.rejected, (state, action) => {

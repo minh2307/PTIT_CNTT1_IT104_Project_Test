@@ -1,722 +1,4 @@
 {
-  "tests": [
-    {
-      "id": 1,
-      "testName": "Thách thức sự hiểu biết của bạn",
-      "categoryId": 1,
-      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711184/history_pupic4.png",
-      "playTime": 10,
-      "playAmount": 5,
-      "questions": [
-        {
-          "idQuestions": 1,
-          "content": "Which is the part of the computer system that one can physically touch?",
-          "answers": [
-            {
-              "answer": "Data"
-            },
-            {
-              "answer": "Operating systems"
-            },
-            {
-              "answer": "Hardware",
-              "isCorrected": true
-            },
-            {
-              "answer": "Software"
-            }
-          ]
-        },
-        {
-          "idQuestions": 2,
-          "content": "Which is the part of the computer system that one can physically touch?",
-          "answers": [
-            {
-              "answer": "Data"
-            },
-            {
-              "answer": "Operating systems"
-            },
-            {
-              "answer": "Hardware",
-              "isCorrected": true
-            },
-            {
-              "answer": "Software"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "testName": "Science Challenge",
-      "categoryId": 2,
-      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711199/science_dlkedc.png",
-      "playTime": 10,
-      "playAmount": 12,
-      "questions": [
-        {
-          "idQuestions": 1,
-          "content": "What planet is known as the Red Planet?",
-          "answers": [
-            {
-              "answer": "Earth"
-            },
-            {
-              "answer": "Mars",
-              "isCorrected": true
-            },
-            {
-              "answer": "Jupiter"
-            },
-            {
-              "answer": "Venus"
-            }
-          ]
-        },
-        {
-          "idQuestions": 2,
-          "content": "What gas do plants absorb from the atmosphere?",
-          "answers": [
-            {
-              "answer": "Oxygen"
-            },
-            {
-              "answer": "Nitrogen"
-            },
-            {
-              "answer": "Carbon dioxide",
-              "isCorrected": true
-            },
-            {
-              "answer": "Hydrogen"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "testName": "History Quiz",
-      "categoryId": 4,
-      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711191/life_mfrvlx.png",
-      "playTime": 10,
-      "playAmount": 9,
-      "questions": [
-        {
-          "idQuestions": 1,
-          "content": "Who was the first President of the United States?",
-          "answers": [
-            {
-              "answer": "George Washington",
-              "isCorrected": true
-            },
-            {
-              "answer": "Abraham Lincoln"
-            },
-            {
-              "answer": "John Adams"
-            },
-            {
-              "answer": "Thomas Jefferson"
-            }
-          ]
-        },
-        {
-          "idQuestions": 2,
-          "content": "In which year did World War II end?",
-          "answers": [
-            {
-              "answer": "1945",
-              "isCorrected": true
-            },
-            {
-              "answer": "1940"
-            },
-            {
-              "answer": "1939"
-            },
-            {
-              "answer": "1950"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "testName": "History Quiz",
-      "categoryId": 4,
-      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711191/life_mfrvlx.png",
-      "playTime": 10,
-      "playAmount": 9,
-      "questions": [
-        {
-          "idQuestions": 1,
-          "content": "Who was the first President of the United States?",
-          "answers": [
-            {
-              "answer": "George Washington",
-              "isCorrected": true
-            },
-            {
-              "answer": "Abraham Lincoln"
-            },
-            {
-              "answer": "John Adams"
-            },
-            {
-              "answer": "Thomas Jefferson"
-            }
-          ]
-        },
-        {
-          "idQuestions": 2,
-          "content": "In which year did World War II end?",
-          "answers": [
-            {
-              "answer": "1945",
-              "isCorrected": true
-            },
-            {
-              "answer": "1940"
-            },
-            {
-              "answer": "1939"
-            },
-            {
-              "answer": "1950"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "testName": "Ancient Civilizations",
-      "categoryId": 1,
-      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711301/history2_lplbhn.png",
-      "playTime": 8,
-      "playAmount": 10,
-      "questions": [
-        {
-          "idQuestions": 1,
-          "content": "Which ancient civilization built the pyramids?",
-          "answers": [
-            {
-              "answer": "Romans"
-            },
-            {
-              "answer": "Egyptians",
-              "isCorrected": true
-            },
-            {
-              "answer": "Greeks"
-            },
-            {
-              "answer": "Mayans"
-            }
-          ]
-        },
-        {
-          "idQuestions": 2,
-          "content": "Where did the Olympic Games originate?",
-          "answers": [
-            {
-              "answer": "Egypt"
-            },
-            {
-              "answer": "Rome"
-            },
-            {
-              "answer": "Greece",
-              "isCorrected": true
-            },
-            {
-              "answer": "China"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "testName": "Modern World History",
-      "categoryId": 1,
-      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711309/history3_vfkjme.png",
-      "playTime": 12,
-      "playAmount": 8,
-      "questions": [
-        {
-          "idQuestions": 1,
-          "content": "Who was the British Prime Minister during World War II?",
-          "answers": [
-            {
-              "answer": "Winston Churchill",
-              "isCorrected": true
-            },
-            {
-              "answer": "Tony Blair"
-            },
-            {
-              "answer": "Margaret Thatcher"
-            },
-            {
-              "answer": "Neville Chamberlain"
-            }
-          ]
-        },
-        {
-          "idQuestions": 2,
-          "content": "The Cold War was primarily between which two nations?",
-          "answers": [
-            {
-              "answer": "USA and USSR",
-              "isCorrected": true
-            },
-            {
-              "answer": "USA and China"
-            },
-            {
-              "answer": "France and Germany"
-            },
-            {
-              "answer": "UK and Japan"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "testName": "Human Body Challenge",
-      "categoryId": 2,
-      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711333/science2_c0sqwj.png",
-      "playTime": 10,
-      "playAmount": 10,
-      "questions": [
-        {
-          "idQuestions": 1,
-          "content": "Which organ pumps blood through the body?",
-          "answers": [
-            {
-              "answer": "Liver"
-            },
-            {
-              "answer": "Heart",
-              "isCorrected": true
-            },
-            {
-              "answer": "Brain"
-            },
-            {
-              "answer": "Kidney"
-            }
-          ]
-        },
-        {
-          "idQuestions": 2,
-          "content": "Which system controls your breathing?",
-          "answers": [
-            {
-              "answer": "Digestive system"
-            },
-            {
-              "answer": "Respiratory system",
-              "isCorrected": true
-            },
-            {
-              "answer": "Nervous system"
-            },
-            {
-              "answer": "Circulatory system"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 8,
-      "testName": "Physics in Action",
-      "categoryId": 2,
-      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711348/science3_dvotxy.png",
-      "playTime": 7,
-      "playAmount": 6,
-      "questions": [
-        {
-          "idQuestions": 1,
-          "content": "Which law explains the motion of planets around the Sun?",
-          "answers": [
-            {
-              "answer": "Newton's Laws",
-              "isCorrected": true
-            },
-            {
-              "answer": "Ohm’s Law"
-            },
-            {
-              "answer": "Boyle’s Law"
-            }
-          ]
-        },
-        {
-          "idQuestions": 2,
-          "content": "Which law explains the motion of planets around the Sun?",
-          "answers": [
-            {
-              "answer": "Newton's Laws",
-              "isCorrected": true
-            },
-            {
-              "answer": "Ohm’s Law"
-            },
-            {
-              "answer": "Boyle’s Law"
-            },
-            {
-              "answer": "Hooke’s Law"
-            }
-          ]
-        },
-        {
-          "idQuestions": 3,
-          "content": "Which law explains the motion of planets around the Sun?",
-          "answers": [
-            {
-              "answer": "Newton's Laws",
-              "isCorrected": true
-            },
-            {
-              "answer": "Ohm’s Law"
-            },
-            {
-              "answer": "Boyle’s Law"
-            },
-            {
-              "answer": "Hooke’s Law"
-            }
-          ]
-        },
-        {
-          "idQuestions": 4,
-          "content": "Which law explains the motion of planets around the Sun?",
-          "answers": [
-            {
-              "answer": "Newton's Laws",
-              "isCorrected": true
-            },
-            {
-              "answer": "Ohm’s Law"
-            },
-            {
-              "answer": "Boyle’s Law"
-            },
-            {
-              "answer": "Hooke’s Law"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "testName": "Music Legends",
-      "categoryId": 3,
-      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711366/entertainment3_emlnah.png",
-      "playTime": 8,
-      "playAmount": 8,
-      "questions": [
-        {
-          "idQuestions": 1,
-          "content": "Who is known as the 'King of Pop'?",
-          "answers": [
-            {
-              "answer": "Michael Jackson",
-              "isCorrected": true
-            },
-            {
-              "answer": "Elvis Presley"
-            },
-            {
-              "answer": "Prince"
-            },
-            {
-              "answer": "Freddie Mercury"
-            }
-          ]
-        },
-        {
-          "idQuestions": 2,
-          "content": "Which band released the song 'Bohemian Rhapsody'?",
-          "answers": [
-            {
-              "answer": "The Beatles"
-            },
-            {
-              "answer": "Queen",
-              "isCorrected": true
-            },
-            {
-              "answer": "Pink Floyd"
-            },
-            {
-              "answer": "U2"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 11,
-      "testName": "Healthy Living",
-      "categoryId": 4,
-      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711381/life2_ytgrvx.png",
-      "playTime": 9,
-      "playAmount": 11,
-      "questions": [
-        {
-          "idQuestions": 1,
-          "content": "Which vitamin is produced when a person is exposed to sunlight?",
-          "answers": [
-            {
-              "answer": "Vitamin A"
-            },
-            {
-              "answer": "Vitamin D",
-              "isCorrected": true
-            },
-            {
-              "answer": "Vitamin C"
-            },
-            {
-              "answer": "Vitamin B12"
-            }
-          ]
-        },
-        {
-          "idQuestions": 2,
-          "content": "What is the recommended amount of sleep for adults?",
-          "answers": [
-            {
-              "answer": "4-5 hours"
-            },
-            {
-              "answer": "7-9 hours",
-              "isCorrected": true
-            },
-            {
-              "answer": "10-12 hours"
-            },
-            {
-              "answer": "Less than 6 hours"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 12,
-      "testName": "Food and Nutrition",
-      "categoryId": 4,
-      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711390/life3_q6fphz.png",
-      "playTime": 8,
-      "playAmount": 10,
-      "questions": [
-        {
-          "idQuestions": 1,
-          "content": "Which of these is a source of healthy fat?",
-          "answers": [
-            {
-              "answer": "Avocado",
-              "isCorrected": true
-            },
-            {
-              "answer": "Butter"
-            },
-            {
-              "answer": "Soda"
-            },
-            {
-              "answer": "White bread"
-            }
-          ]
-        },
-        {
-          "idQuestions": 2,
-          "content": "What mineral helps in the formation of strong bones?",
-          "answers": [
-            {
-              "answer": "Calcium",
-              "isCorrected": true
-            },
-            {
-              "answer": "Iron"
-            },
-            {
-              "answer": "Sodium"
-            },
-            {
-              "answer": "Potassium"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 13,
-      "testName": "Scientific Discoveries",
-      "categoryId": 2,
-      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711399/science4_dncxep.png",
-      "playTime": 12,
-      "playAmount": 15,
-      "questions": [
-        {
-          "idQuestions": 1,
-          "content": "Who developed the theory of relativity?",
-          "answers": [
-            {
-              "answer": "Albert Einstein",
-              "isCorrected": true
-            },
-            {
-              "answer": "Isaac Newton"
-            },
-            {
-              "answer": "Nikola Tesla"
-            },
-            {
-              "answer": "Stephen Hawking"
-            }
-          ]
-        },
-        {
-          "idQuestions": 2,
-          "content": "Who discovered penicillin?",
-          "answers": [
-            {
-              "answer": "Alexander Fleming",
-              "isCorrected": true
-            },
-            {
-              "answer": "Louis Pasteur"
-            },
-            {
-              "answer": "Marie Curie"
-            },
-            {
-              "answer": "Gregor Mendel"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 14,
-      "testName": "World Leaders Quiz",
-      "categoryId": 1,
-      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711409/history4_qc7hoy.png",
-      "playTime": 10,
-      "playAmount": 9,
-      "questions": [
-        {
-          "idQuestions": 1,
-          "content": "Who was the first woman Prime Minister of the UK?",
-          "answers": [
-            {
-              "answer": "Margaret Thatcher",
-              "isCorrected": true
-            },
-            {
-              "answer": "Theresa May"
-            },
-            {
-              "answer": "Angela Merkel"
-            },
-            {
-              "answer": "Indira Gandhi"
-            }
-          ]
-        },
-        {
-          "idQuestions": 2,
-          "content": "Who is known as the Father of India?",
-          "answers": [
-            {
-              "answer": "Jawaharlal Nehru"
-            },
-            {
-              "answer": "Mahatma Gandhi",
-              "isCorrected": true
-            },
-            {
-              "answer": "Subhash Chandra Bose"
-            },
-            {
-              "answer": "B. R. Ambedkar"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "testName": "Nguyễn Sơn Min",
-      "categoryId": 1,
-      "playTime": 12,
-      "playAmount": 1,
-      "id": 15,
-      "questions": [
-        {
-          "idQuestions": 0,
-          "content": "ádssadă",
-          "answers": [
-            {
-              "answer": "ádá"
-            },
-            {
-              "answer": "áđádđ",
-              "isCorrected": true
-            }
-          ]
-        },
-        {
-          "idQuestions": 0,
-          "content": "đâsds",
-          "answers": [
-            {
-              "answer": "sss"
-            },
-            {
-              "answer": "sssss",
-              "isCorrected": true
-            },
-            {
-              "answer": "sss"
-            },
-            {
-              "answer": "ssssssssss"
-            }
-          ]
-        },
-        {
-          "idQuestions": 0,
-          "content": "aaaaaaaâ",
-          "answers": [
-            {
-              "answer": "sad"
-            },
-            {
-              "answer": "áđá",
-              "isCorrected": true
-            },
-            {
-              "answer": "áđá"
-            }
-          ]
-        }
-      ]
-    }
-  ],
   "category": [
     {
       "id": 1,
@@ -752,6 +34,907 @@
       "email": "nsm@gmail.com",
       "password": "123456789",
       "role": "user"
+    }
+  ],
+  "tests": [
+    {
+      "id": 1,
+      "testName": "Thách thức sự hiểu biết của bạn",
+      "categoryId": 1,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711184/history_pupic4.png",
+      "playTime": 10,
+      "playAmount": 5,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Bộ phận nào của hệ thống máy tính mà bạn có thể chạm vào trực tiếp?",
+          "answers": [
+            { "answer": "Dữ liệu" },
+            { "answer": "Hệ điều hành" },
+            { "answer": "Phần cứng", "isCorrected": true },
+            { "answer": "Phần mềm" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Bộ phận nào của hệ thống máy tính mà bạn có thể chạm vào trực tiếp?",
+          "answers": [
+            { "answer": "Dữ liệu" },
+            { "answer": "Hệ điều hành" },
+            { "answer": "Phần cứng", "isCorrected": true },
+            { "answer": "Phần mềm" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "testName": "Thử thách Khoa học",
+      "categoryId": 2,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711199/science_dlkedc.png",
+      "playTime": 10,
+      "playAmount": 12,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Hành tinh nào được biết đến với tên Hành tinh Đỏ?",
+          "answers": [
+            { "answer": "Trái Đất" },
+            { "answer": "Sao Hỏa", "isCorrected": true },
+            { "answer": "Sao Mộc" },
+            { "answer": "Sao Kim" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Cây hấp thụ khí gì từ bầu khí quyển?",
+          "answers": [
+            { "answer": "Oxy" },
+            { "answer": "Nitơ" },
+            { "answer": "Carbon dioxide", "isCorrected": true },
+            { "answer": "Hydro" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "testName": "Trắc nghiệm Lịch sử",
+      "categoryId": 4,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711191/life_mfrvlx.png",
+      "playTime": 10,
+      "playAmount": 9,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Ai là Tổng thống đầu tiên của Hoa Kỳ?",
+          "answers": [
+            { "answer": "George Washington", "isCorrected": true },
+            { "answer": "Abraham Lincoln" },
+            { "answer": "John Adams" },
+            { "answer": "Thomas Jefferson" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Chiến tranh Thế giới thứ hai kết thúc vào năm nào?",
+          "answers": [
+            { "answer": "1945", "isCorrected": true },
+            { "answer": "1940" },
+            { "answer": "1939" },
+            { "answer": "1950" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "testName": "Nền văn minh cổ đại",
+      "categoryId": 1,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711301/history2_lplbhn.png",
+      "playTime": 8,
+      "playAmount": 10,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Nền văn minh cổ đại nào đã xây dựng Kim tự tháp?",
+          "answers": [
+            { "answer": "Người La Mã" },
+            { "answer": "Người Ai Cập", "isCorrected": true },
+            { "answer": "Người Hy Lạp" },
+            { "answer": "Người Maya" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Thế vận hội (Olympic) xuất phát từ đâu?",
+          "answers": [
+            { "answer": "Ai Cập" },
+            { "answer": "La Mã" },
+            { "answer": "Hy Lạp", "isCorrected": true },
+            { "answer": "Trung Quốc" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "testName": "Lịch sử thế giới hiện đại",
+      "categoryId": 1,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711309/history3_vfkjme.png",
+      "playTime": 12,
+      "playAmount": 8,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Ai là Thủ tướng Anh trong Thế chiến thứ hai?",
+          "answers": [
+            { "answer": "Winston Churchill", "isCorrected": true },
+            { "answer": "Tony Blair" },
+            { "answer": "Margaret Thatcher" },
+            { "answer": "Neville Chamberlain" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Chiến tranh Lạnh chủ yếu diễn ra giữa hai quốc gia nào?",
+          "answers": [
+            { "answer": "Mỹ và Liên Xô", "isCorrected": true },
+            { "answer": "Mỹ và Trung Quốc" },
+            { "answer": "Pháp và Đức" },
+            { "answer": "Anh và Nhật" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "testName": "Thử thách cơ thể con người",
+      "categoryId": 2,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711333/science2_c0sqwj.png",
+      "playTime": 10,
+      "playAmount": 10,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Cơ quan nào bơm máu đi khắp cơ thể?",
+          "answers": [
+            { "answer": "Gan" },
+            { "answer": "Tim", "isCorrected": true },
+            { "answer": "Não" },
+            { "answer": "Thận" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Hệ thống nào kiểm soát việc hô hấp?",
+          "answers": [
+            { "answer": "Hệ tiêu hóa" },
+            { "answer": "Hệ hô hấp", "isCorrected": true },
+            { "answer": "Hệ thần kinh" },
+            { "answer": "Hệ tuần hoàn" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "testName": "Vật lý trong thực tế",
+      "categoryId": 2,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711348/science3_dvotxy.png",
+      "playTime": 7,
+      "playAmount": 6,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Định luật nào giải thích chuyển động của các hành tinh quanh Mặt Trời?",
+          "answers": [
+            { "answer": "Định luật Newton", "isCorrected": true },
+            { "answer": "Định luật Ohm" },
+            { "answer": "Định luật Boyle" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Định luật nào giải thích chuyển động của các hành tinh quanh Mặt Trời?",
+          "answers": [
+            { "answer": "Định luật Newton", "isCorrected": true },
+            { "answer": "Định luật Ohm" },
+            { "answer": "Định luật Boyle" },
+            { "answer": "Định luật Hooke" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "testName": "Huyền thoại âm nhạc",
+      "categoryId": 3,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711366/entertainment3_emlnah.png",
+      "playTime": 8,
+      "playAmount": 8,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Ai được biết đến với danh hiệu 'Vua nhạc Pop'?",
+          "answers": [
+            { "answer": "Michael Jackson", "isCorrected": true },
+            { "answer": "Elvis Presley" },
+            { "answer": "Prince" },
+            { "answer": "Freddie Mercury" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Ban nhạc nào đã phát hành bài hát 'Bohemian Rhapsody'?",
+          "answers": [
+            { "answer": "The Beatles" },
+            { "answer": "Queen", "isCorrected": true },
+            { "answer": "Pink Floyd" },
+            { "answer": "U2" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "testName": "Sống khỏe",
+      "categoryId": 4,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711381/life2_ytgrvx.png",
+      "playTime": 9,
+      "playAmount": 11,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Vitamin nào được sản xuất khi cơ thể tiếp xúc ánh nắng mặt trời?",
+          "answers": [
+            { "answer": "Vitamin A" },
+            { "answer": "Vitamin D", "isCorrected": true },
+            { "answer": "Vitamin C" },
+            { "answer": "Vitamin B12" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Lượng giấc ngủ khuyến nghị cho người trưởng thành là bao nhiêu?",
+          "answers": [
+            { "answer": "4-5 giờ" },
+            { "answer": "7-9 giờ", "isCorrected": true },
+            { "answer": "10-12 giờ" },
+            { "answer": "Dưới 6 giờ" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "testName": "Thực phẩm và dinh dưỡng",
+      "categoryId": 4,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711390/life3_q6fphz.png",
+      "playTime": 8,
+      "playAmount": 10,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Loại thực phẩm nào là nguồn chất béo lành mạnh?",
+          "answers": [
+            { "answer": "Bơ quả bơ", "isCorrected": true },
+            { "answer": "Bơ động vật" },
+            { "answer": "Nước ngọt" },
+            { "answer": "Bánh mì trắng" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Khoáng chất nào giúp hình thành xương chắc khỏe?",
+          "answers": [
+            { "answer": "Canxi", "isCorrected": true },
+            { "answer": "Sắt" },
+            { "answer": "Natri" },
+            { "answer": "Kali" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "testName": "Phát minh khoa học",
+      "categoryId": 2,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711399/science4_dncxep.png",
+      "playTime": 12,
+      "playAmount": 15,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Ai đã phát triển thuyết tương đối?",
+          "answers": [
+            { "answer": "Albert Einstein", "isCorrected": true },
+            { "answer": "Isaac Newton" },
+            { "answer": "Nikola Tesla" },
+            { "answer": "Stephen Hawking" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Ai đã phát hiện ra penicillin?",
+          "answers": [
+            { "answer": "Alexander Fleming", "isCorrected": true },
+            { "answer": "Louis Pasteur" },
+            { "answer": "Marie Curie" },
+            { "answer": "Gregor Mendel" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "testName": "Trắc nghiệm Lãnh đạo thế giới",
+      "categoryId": 1,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711409/history4_qc7hoy.png",
+      "playTime": 10,
+      "playAmount": 9,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Ai là nữ Thủ tướng đầu tiên của Vương quốc Anh?",
+          "answers": [
+            { "answer": "Margaret Thatcher", "isCorrected": true },
+            { "answer": "Theresa May" },
+            { "answer": "Angela Merkel" },
+            { "answer": "Indira Gandhi" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Ai được biết đến là Cha già dân tộc Ấn Độ?",
+          "answers": [
+            { "answer": "Jawaharlal Nehru" },
+            { "answer": "Mahatma Gandhi", "isCorrected": true },
+            { "answer": "Subhash Chandra Bose" },
+            { "answer": "B. R. Ambedkar" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "testName": "Trắc nghiệm Lãnh đạo thế giới 1",
+      "categoryId": 1,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711409/history4_qc7hoy.png",
+      "playTime": 10,
+      "playAmount": 9,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Ai là nữ Thủ tướng đầu tiên của Vương quốc Anh?",
+          "answers": [
+            { "answer": "Margaret Thatcher", "isCorrected": true },
+            { "answer": "Theresa May" },
+            { "answer": "Angela Merkel" },
+            { "answer": "Indira Gandhi" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Ai được biết đến là Cha già dân tộc Ấn Độ?",
+          "answers": [
+            { "answer": "Jawaharlal Nehru" },
+            { "answer": "Mahatma Gandhi", "isCorrected": true },
+            { "answer": "Subhash Chandra Bose" },
+            { "answer": "B. R. Ambedkar" }
+          ]
+        },
+        {
+          "idQuestions": 3,
+          "content": "Ai là Tổng thống đầu tiên của Hoa Kỳ?",
+          "answers": [
+            { "answer": "George Washington", "isCorrected": true },
+            { "answer": "Thomas Jefferson" },
+            { "answer": "John Adams" },
+            { "answer": "James Madison" }
+          ]
+        },
+        {
+          "idQuestions": 4,
+          "content": "Ai đã lãnh đạo Liên Xô trong Thế chiến thứ hai?",
+          "answers": [
+            { "answer": "Vladimir Lenin" },
+            { "answer": "Joseph Stalin", "isCorrected": true },
+            { "answer": "Nikita Khrushchev" },
+            { "answer": "Leon Trotsky" }
+          ]
+        },
+        {
+          "idQuestions": 5,
+          "content": "Ai là Thủ tướng đầu tiên của nước Đức thống nhất?",
+          "answers": [
+            { "answer": "Konrad Adenauer", "isCorrected": true },
+            { "answer": "Angela Merkel" },
+            { "answer": "Helmut Kohl" },
+            { "answer": "Otto von Bismarck" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "testName": "Trắc nghiệm Lãnh đạo thế giới 2",
+      "categoryId": 1,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711409/history4_qc7hoy.png",
+      "playTime": 12,
+      "playAmount": 10,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Ai là Tổng thống thứ 16 của Hoa Kỳ?",
+          "answers": [
+            { "answer": "Abraham Lincoln", "isCorrected": true },
+            { "answer": "Ulysses S. Grant" },
+            { "answer": "Theodore Roosevelt" },
+            { "answer": "Andrew Johnson" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Nhà lãnh đạo nào nổi tiếng với bài diễn văn 'I Have a Dream'?",
+          "answers": [
+            { "answer": "Martin Luther King Jr.", "isCorrected": true },
+            { "answer": "Malcolm X" },
+            { "answer": "Rosa Parks" },
+            { "answer": "Barack Obama" }
+          ]
+        },
+        {
+          "idQuestions": 3,
+          "content": "Ai là nữ Thủ tướng đầu tiên của Đức?",
+          "answers": [
+            { "answer": "Angela Merkel", "isCorrected": true },
+            { "answer": "Ursula von der Leyen" },
+            { "answer": "Hannelore Kraft" },
+            { "answer": "Katrin Göring-Eckardt" }
+          ]
+        },
+        {
+          "idQuestions": 4,
+          "content": "Ai là Tổng thống đầu tiên của Nam Phi sau chế độ apartheid?",
+          "answers": [
+            { "answer": "Nelson Mandela", "isCorrected": true },
+            { "answer": "Thabo Mbeki" },
+            { "answer": "F. W. de Klerk" },
+            { "answer": "Jacob Zuma" }
+          ]
+        },
+        {
+          "idQuestions": 5,
+          "content": "Nhà lãnh đạo Pháp nào nổi tiếng với vai trò trong Thế chiến II và lãnh đạo Pháp Tự do?",
+          "answers": [
+            { "answer": "Charles de Gaulle", "isCorrected": true },
+            { "answer": "Napoleon Bonaparte" },
+            { "answer": "Jacques Chirac" },
+            { "answer": "François Mitterrand" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "testName": "Trắc nghiệm Lãnh đạo thế giới 3",
+      "categoryId": 1,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711409/history4_qc7hoy.png",
+      "playTime": 15,
+      "playAmount": 12,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Ai là lãnh đạo Trung Quốc trong Cách mạng Văn hóa?",
+          "answers": [
+            { "answer": "Mao Trạch Đông", "isCorrected": true },
+            { "answer": "Đặng Tiểu Bình" },
+            { "answer": "Tôn Dật Tiên" },
+            { "answer": "Tập Cận Bình" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Ai là Thủ tướng đầu tiên của Ấn Độ?",
+          "answers": [
+            { "answer": "Jawaharlal Nehru", "isCorrected": true },
+            { "answer": "Mahatma Gandhi" },
+            { "answer": "Indira Gandhi" },
+            { "answer": "Rajiv Gandhi" }
+          ]
+        },
+        {
+          "idQuestions": 3,
+          "content": "Tổng thống Mỹ nào từ chức vì vụ bê bối Watergate?",
+          "answers": [
+            { "answer": "Richard Nixon", "isCorrected": true },
+            { "answer": "Jimmy Carter" },
+            { "answer": "Gerald Ford" },
+            { "answer": "Lyndon B. Johnson" }
+          ]
+        },
+        {
+          "idQuestions": 4,
+          "content": "Ai là Tổng thống đầu tiên của Hàn Quốc?",
+          "answers": [
+            { "answer": "Syngman Rhee", "isCorrected": true },
+            { "answer": "Park Chung-hee" },
+            { "answer": "Kim Dae-jung" },
+            { "answer": "Moon Jae-in" }
+          ]
+        },
+        {
+          "idQuestions": 5,
+          "content": "Nhà lãnh đạo Ý nào cầm quyền trong Thế chiến II?",
+          "answers": [
+            { "answer": "Benito Mussolini", "isCorrected": true },
+            { "answer": "Giuseppe Garibaldi" },
+            { "answer": "Victor Emmanuel III" },
+            { "answer": "Silvio Berlusconi" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "testName": "Trắc nghiệm Lãnh đạo thế giới 4",
+      "categoryId": 1,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711409/history4_qc7hoy.png",
+      "playTime": 10,
+      "playAmount": 8,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Ai là lãnh đạo Cuba trong Khủng hoảng Tên lửa Cuba?",
+          "answers": [
+            { "answer": "Fidel Castro", "isCorrected": true },
+            { "answer": "Che Guevara" },
+            { "answer": "Raúl Castro" },
+            { "answer": "Hugo Chávez" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Ai là nữ Thủ tướng đầu tiên của Pakistan?",
+          "answers": [
+            { "answer": "Benazir Bhutto", "isCorrected": true },
+            { "answer": "Indira Gandhi" },
+            { "answer": "Golda Meir" },
+            { "answer": "Sheikh Hasina" }
+          ]
+        },
+        {
+          "idQuestions": 3,
+          "content": "Ai là lãnh đạo Liên Xô trong Khủng hoảng Tên lửa Cuba?",
+          "answers": [
+            { "answer": "Nikita Khrushchev", "isCorrected": true },
+            { "answer": "Leonid Brezhnev" },
+            { "answer": "Joseph Stalin" },
+            { "answer": "Mikhail Gorbachev" }
+          ]
+        },
+        {
+          "idQuestions": 4,
+          "content": "Ai là Tổng thống đầu tiên của Israel?",
+          "answers": [
+            { "answer": "Chaim Weizmann", "isCorrected": true },
+            { "answer": "David Ben-Gurion" },
+            { "answer": "Golda Meir" },
+            { "answer": "Shimon Peres" }
+          ]
+        },
+        {
+          "idQuestions": 5,
+          "content": "Ai là lãnh đạo Vương quốc Anh trong Thế chiến II?",
+          "answers": [
+            { "answer": "Winston Churchill", "isCorrected": true },
+            { "answer": "Neville Chamberlain" },
+            { "answer": "Clement Attlee" },
+            { "answer": "Margaret Thatcher" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "testName": "Chiến tranh thế giới II",
+      "categoryId": 1,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711184/history_pupic4.png",
+      "playTime": 10,
+      "playAmount": 8,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Quốc gia nào là thành viên của phe Trục?",
+          "answers": [
+            { "answer": "Pháp" },
+            { "answer": "Đức", "isCorrected": true },
+            { "answer": "Anh" },
+            { "answer": "Mỹ" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Ngày kết thúc Thế chiến II là năm nào?",
+          "answers": [
+            { "answer": "1945", "isCorrected": true },
+            { "answer": "1944" },
+            { "answer": "1939" },
+            { "answer": "1950" }
+          ]
+        },
+        {
+          "idQuestions": 3,
+          "content": "Ai là lãnh đạo của Nhật Bản trong Thế chiến II?",
+          "answers": [
+            { "answer": "Hirohito", "isCorrected": true },
+            { "answer": "Tojo Hideki" },
+            { "answer": "Yamamoto" },
+            { "answer": "Shigeru Yoshida" }
+          ]
+        },
+        {
+          "idQuestions": 4,
+          "content": "Trận Normandy nổi tiếng diễn ra ở quốc gia nào?",
+          "answers": [
+            { "answer": "Pháp", "isCorrected": true },
+            { "answer": "Đức" },
+            { "answer": "Anh" },
+            { "answer": "Ý" }
+          ]
+        },
+        {
+          "idQuestions": 5,
+          "content": "Thủ tướng Anh trong phần lớn Thế chiến II là ai?",
+          "answers": [
+            { "answer": "Winston Churchill", "isCorrected": true },
+            { "answer": "Neville Chamberlain" },
+            { "answer": "Clement Attlee" },
+            { "answer": "Tony Blair" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "testName": "Khám phá vũ trụ",
+      "categoryId": 2,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711199/science_dlkedc.png",
+      "playTime": 12,
+      "playAmount": 9,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Hành tinh nào gần Mặt Trời nhất?",
+          "answers": [
+            { "answer": "Sao Thủy", "isCorrected": true },
+            { "answer": "Sao Kim" },
+            { "answer": "Trái Đất" },
+            { "answer": "Sao Hỏa" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Hành tinh nào được gọi là Hành tinh Đỏ?",
+          "answers": [
+            { "answer": "Sao Hỏa", "isCorrected": true },
+            { "answer": "Sao Kim" },
+            { "answer": "Sao Thủy" },
+            { "answer": "Sao Mộc" }
+          ]
+        },
+        {
+          "idQuestions": 3,
+          "content": "Ngôi sao gần Trái Đất nhất là gì?",
+          "answers": [
+            { "answer": "Mặt Trời", "isCorrected": true },
+            { "answer": "Sao Proxima Centauri" },
+            { "answer": "Sao Sirius" },
+            { "answer": "Sao Alpha Centauri" }
+          ]
+        },
+        {
+          "idQuestions": 4,
+          "content": "Sao Mộc thuộc loại hành tinh nào?",
+          "answers": [
+            { "answer": "Hành tinh khí khổng lồ", "isCorrected": true },
+            { "answer": "Hành tinh đất đá" },
+            { "answer": "Hành tinh lùn" },
+            { "answer": "Sao chổi" }
+          ]
+        },
+        {
+          "idQuestions": 5,
+          "content": "Chân trời sự kiện là gì liên quan đến?",
+          "answers": [
+            { "answer": "Hố đen", "isCorrected": true },
+            { "answer": "Ngôi sao neutron" },
+            { "answer": "Hành tinh" },
+            { "answer": "Sao chổi" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "testName": "Thần tượng âm nhạc",
+      "categoryId": 3,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711111/entertainment_pzrota.png",
+      "playTime": 10,
+      "playAmount": 8,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Ai được gọi là 'Ông hoàng nhạc pop'?",
+          "answers": [
+            { "answer": "Michael Jackson", "isCorrected": true },
+            { "answer": "Elvis Presley" },
+            { "answer": "Prince" },
+            { "answer": "Freddie Mercury" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Ban nhạc nào phát hành bài hát 'Bohemian Rhapsody'?",
+          "answers": [
+            { "answer": "Queen", "isCorrected": true },
+            { "answer": "The Beatles" },
+            { "answer": "Pink Floyd" },
+            { "answer": "U2" }
+          ]
+        },
+        {
+          "idQuestions": 3,
+          "content": "Ca sĩ nào nổi tiếng với bài hát 'Rolling in the Deep'?",
+          "answers": [
+            { "answer": "Adele", "isCorrected": true },
+            { "answer": "Beyoncé" },
+            { "answer": "Taylor Swift" },
+            { "answer": "Rihanna" }
+          ]
+        },
+        {
+          "idQuestions": 4,
+          "content": "Nhạc sĩ nào sáng tác nhạc giao hưởng số 9?",
+          "answers": [
+            { "answer": "Beethoven", "isCorrected": true },
+            { "answer": "Mozart" },
+            { "answer": "Bach" },
+            { "answer": "Chopin" }
+          ]
+        },
+        {
+          "idQuestions": 5,
+          "content": "Ban nhạc nào nổi tiếng với 'Stairway to Heaven'?",
+          "answers": [
+            { "answer": "Led Zeppelin", "isCorrected": true },
+            { "answer": "Pink Floyd" },
+            { "answer": "The Rolling Stones" },
+            { "answer": "AC/DC" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "testName": "Sức khỏe và đời sống",
+      "categoryId": 4,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711191/life_mfrvlx.png",
+      "playTime": 8,
+      "playAmount": 9,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Vitamin nào được tổng hợp khi tiếp xúc ánh nắng mặt trời?",
+          "answers": [
+            { "answer": "Vitamin D", "isCorrected": true },
+            { "answer": "Vitamin A" },
+            { "answer": "Vitamin C" },
+            { "answer": "Vitamin B12" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Thời gian ngủ được khuyến nghị cho người lớn là bao nhiêu?",
+          "answers": [
+            { "answer": "7-9 giờ", "isCorrected": true },
+            { "answer": "4-5 giờ" },
+            { "answer": "10-12 giờ" },
+            { "answer": "Dưới 6 giờ" }
+          ]
+        },
+        {
+          "idQuestions": 3,
+          "content": "Hệ cơ quan nào kiểm soát nhịp thở?",
+          "answers": [
+            { "answer": "Hệ hô hấp", "isCorrected": true },
+            { "answer": "Hệ tiêu hóa" },
+            { "answer": "Hệ thần kinh" },
+            { "answer": "Hệ tuần hoàn" }
+          ]
+        },
+        {
+          "idQuestions": 4,
+          "content": "Khoáng chất nào giúp hình thành xương chắc khỏe?",
+          "answers": [
+            { "answer": "Canxi", "isCorrected": true },
+            { "answer": "Sắt" },
+            { "answer": "Natri" },
+            { "answer": "Kali" }
+          ]
+        },
+        {
+          "idQuestions": 5,
+          "content": "Loại thực phẩm nào là nguồn chất béo lành mạnh?",
+          "answers": [
+            { "answer": "Bơ quả bơ", "isCorrected": true },
+            { "answer": "Bơ động vật" },
+            { "answer": "Nước ngọt" },
+            { "answer": "Bánh mì trắng" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "testName": "Khám phá khoa học",
+      "categoryId": 2,
+      "image": "https://res.cloudinary.com/dvekkwf3a/image/upload/v1759711199/science_dlkedc.png",
+      "playTime": 12,
+      "playAmount": 10,
+      "questions": [
+        {
+          "idQuestions": 1,
+          "content": "Ai phát minh ra đèn điện?",
+          "answers": [
+            { "answer": "Thomas Edison", "isCorrected": true },
+            { "answer": "Nikola Tesla" },
+            { "answer": "Alexander Graham Bell" },
+            { "answer": "Galileo Galilei" }
+          ]
+        },
+        {
+          "idQuestions": 2,
+          "content": "Nước sôi ở nhiệt độ bao nhiêu độ C?",
+          "answers": [
+            { "answer": "100°C", "isCorrected": true },
+            { "answer": "90°C" },
+            { "answer": "80°C" },
+            { "answer": "120°C" }
+          ]
+        },
+        {
+          "idQuestions": 3,
+          "content": "Trái Đất quay quanh Mặt Trời trong bao nhiêu ngày?",
+          "answers": [
+            { "answer": "365 ngày", "isCorrected": true },
+            { "answer": "360 ngày" },
+            { "answer": "366 ngày" },
+            { "answer": "364 ngày" }
+          ]
+        },
+        {
+          "idQuestions": 4,
+          "content": "Chất nào tạo nên cấu trúc ADN?",
+          "answers": [
+            { "answer": "Nucleotide", "isCorrected": true },
+            { "answer": "Amino acid" },
+            { "answer": "Glucose" },
+            { "answer": "Protein" }
+          ]
+        },
+        {
+          "idQuestions": 5,
+          "content": "Ai phát triển thuyết tương đối?",
+          "answers": [
+            { "answer": "Albert Einstein", "isCorrected": true },
+            { "answer": "Isaac Newton" },
+            { "answer": "Nikola Tesla" },
+            { "answer": "Stephen Hawking" }
+          ]
+        }
+      ]
     }
   ]
 }

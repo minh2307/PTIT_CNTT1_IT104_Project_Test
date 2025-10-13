@@ -80,7 +80,7 @@ const categoryModalSlice = createSlice({
         addCategory.fulfilled,
         (state, action: PayloadAction<CategoryType>) => {
           state.loading = false;
-          state.categorys?.push(action.payload);
+          state.categorys?.unshift(action.payload);
         }
       )
       .addCase(addCategory.rejected, (state, action) => {

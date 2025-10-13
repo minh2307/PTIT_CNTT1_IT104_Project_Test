@@ -16,9 +16,7 @@ const TestFormPage = lazy(
 );
 const Quizz = lazy(() => import("../component/quizzTest/index"));
 
-// Router setup
 export const router = createBrowserRouter([
-  // Public routes
   {
     path: "*",
     element: <LazyLoader element={Login} />,
@@ -32,16 +30,20 @@ export const router = createBrowserRouter([
     element: <LazyLoader element={Register} />,
   },
   {
-    path: "/",
-    element: <LazyLoader element={Home} />,
-  },
-  {
-    path: "/quizz/:id",
-    element: <LazyLoader element={Quizz} />,
-  },
-
-  {
     element: <PrivateRoute />,
+    children: [
+      {
+        path: "/",
+        element: <LazyLoader element={Home} />,
+      },
+      {
+        path: "/quizz/:id",
+        element: <LazyLoader element={Quizz} />,
+      },
+    ],
+  },
+  {
+    element: <PrivateRoute allowedRoles={["admin"]} />,
     children: [
       {
         path: "/manager",

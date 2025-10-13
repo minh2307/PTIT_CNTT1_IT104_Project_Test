@@ -1,14 +1,33 @@
-import { NavLink } from "react-router-dom";
+import { message, Modal } from "antd";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export const Nav = () => {
+  const navigate = useNavigate();
+
   const navLinkCls = ({ isActive }: { isActive: boolean }) =>
     isActive
       ? "text-[#FFFFFF8C] hover:font-bold hover:text-white"
       : "text-white";
 
-  const logOut = () => {
-    localStorage.removeItem("currentUser");
+  const logOut = (e: React.MouseEvent) => {
+    e.preventDefault();
+    Modal.confirm({
+      title: "Xác nhận đăng xuất",
+      content: "Bạn có chắc chắn muốn đăng xuất không?",
+      okText: "Đăng xuất",
+      cancelText: "Hủy",
+      onOk() {
+        localStorage.removeItem("currentUser");
+        setTimeout(() => {
+          navigate("/login");
+        }, 300);
+      },
+      onCancel() {
+        message.success("Hủy đăng xuất");
+      },
+    });
   };
+
   return (
     <div className="bg-[#212529] text-white flex justify-between px-5 h-[49px]">
       <h3 className="font-bold text-xl flex flex-wrap content-around">

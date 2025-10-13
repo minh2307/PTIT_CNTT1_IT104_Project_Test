@@ -61,6 +61,7 @@ export const TestContent = ({
   useEffect(() => {
     if (timeLeft <= 0) {
       localStorage.removeItem("timeLeft");
+      onFinishTest();
       return;
     }
 
